@@ -1,2 +1,2 @@
 points.c à surveiller
-pile_ptr.c erreur dans le memcpy
+traitement.c erreur de segmentation à la manipulation des fichiers

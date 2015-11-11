@@ -1,9 +1,9 @@
 #include <stdlib.h>
 #include <string.h>
+#include "../include/structure.h"
 #define N 4
 
-typedef struct element{int x; int y; int chemin[N][N]; struct element* suivant;} t_element;
-t_element* pile;
+t_element *pile;
 
 void initpile(void){
 	pile = 	NULL;
@@ -13,13 +13,22 @@ void initpile(void){
 	return (pile == NULL);
 }*/
 
+void CopierMatrice(int T1[N][N], int T2[N][N]){
+	int i, j;
+	for(i=0; i < N; i++){
+		for(j=0; j < N; j++){
+			T1[i][j] = T2[i][j];		
+		}
+	}
+}
+
 void empiler(int x2, int y2, int chemin2[N][N]){
 	t_element* nouv;
 
 	nouv = (t_element*)malloc(sizeof(t_element));
 	nouv->x = x2;
 	nouv->y = y2;
-	memcpy(nouv->chemin,chemin2,sizeof(int)*sizeof(&chemin2)*16);//trouver la taille d'une matrice en mémoire
+	CopierMatrice(nouv->chemin, chemin2);
 	nouv->suivant = pile;
 	pile = nouv;
 }
@@ -30,7 +39,7 @@ void depiler(int *x2, int *y2, int chemin2[N][N]){
 	if(pile!=NULL){
 		*x2 = pile->x;
 		*y2 = pile->y;
-		memcpy(chemin2,pile->chemin,sizeof(int)*sizeof(&chemin2)*16);//trouver la taille d'une matrice en mémoire
+		CopierMatrice(chemin2,pile->chemin);
 		sommet = pile;
 		pile = sommet->suivant;
 		free(sommet);

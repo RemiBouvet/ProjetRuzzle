@@ -1,13 +1,13 @@
 #ifndef PILE_PTR_H_INCLUDED
 #define PILE_PTR_H_INCLUDED
 
-
+#define N 4
 
 #endif // PILE_PTR_H_INCLUDED
 
-typedef struct element{int x; int y; int chemin[4][4]; struct element* suivant;} t_element;
-
 void initpile(void);
+
+void CopierMatrice(int T1[N][N], int T2[N][N]);
 
 //int pilevide(void);
 
