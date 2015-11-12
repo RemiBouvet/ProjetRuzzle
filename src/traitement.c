@@ -124,8 +124,10 @@ void trouverListe(t_case grille[N][N]){
     dico = fopen("dico.txt","r");
     FILE * liste;
     liste = fopen("liste.txt","w");
-    while(!feof(dico)){ // ne passe pas ici ..
-	printf("\ncamarch\n");
+    if(dico == NULL){
+        fopen("/bin/dico.txt","r");
+    }
+    while(!feof(dico)){
         fscanf(dico,"%s", motdico);
         if (motpresent(grille, motdico, chemin)){
             nbPoints = calculPoint(grille, motdico, chemin);
