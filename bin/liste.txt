@@ -1,5 +1,12 @@
-bibi 8
-kiki 72
-kyu 30
-qui 24
-quick 56
+aid 4
+aida 6
+air 6
+cri 10
+cru 14
+cuir 12
+daw 7
+dia 4
+rua 10
+ruai 12
+ryad 24
+wad 7
