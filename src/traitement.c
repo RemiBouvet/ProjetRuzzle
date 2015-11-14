@@ -7,14 +7,14 @@
 #define N 4
 
 
-int trouverchemin(t_case grille[N][N],char motdico[40],int i,int j, int chemin[N][N]){
+int trouverchemin(t_case grille[N][N],char motdico[40],int i,int j, char chemin[N][N]){
     char chaine[40];
     int k, l;
     int n = 1;
     int x, y;
     for(k=0; k<N; k++){
             for(l=0; l<N; l++){
-                chemin[k][l] = 0;
+                chemin[k][l] = '0';
             }
         }
         initpile();
@@ -23,7 +23,7 @@ int trouverchemin(t_case grille[N][N],char motdico[40],int i,int j, int chemin[N
         chemin[x][y] = grille[x][y].lettre;
         empiler(i, j, chemin);
         while(n > 0){
-            if((y + 1) <= 3 && (chemin[x][y + 1] == 0)&& motdico[n] == grille[x][y + 1].lettre){
+            if((y + 1) <= 3 && (chemin[x][y + 1] == '0')&& motdico[n] == grille[x][y + 1].lettre){
                 y = y + 1;
                 chemin[x][y] = grille[x][y].lettre;
                 empiler(x, y, chemin);
@@ -31,7 +31,7 @@ int trouverchemin(t_case grille[N][N],char motdico[40],int i,int j, int chemin[N
                 n++;
                 chaine[n] = '\0';
             }
-            else if((x + 1) <= 3 && (y + 1) <= 3 && (chemin[x + 1][y + 1] == 0) && motdico[n] == grille[x + 1][y + 1].lettre){
+            else if((x + 1) <= 3 && (y + 1) <= 3 && (chemin[x + 1][y + 1] == '0') && motdico[n] == grille[x + 1][y + 1].lettre){
                 x = x + 1;
                 y = y + 1;
                 chemin[x][y] = grille[x][y].lettre;
@@ -40,7 +40,7 @@ int trouverchemin(t_case grille[N][N],char motdico[40],int i,int j, int chemin[N
                 n++;
                 chaine[n] = '\0';
             }
-            else if((x + 1) <= 3 && (chemin[x + 1][y] == 0) && motdico[n] == grille[x + 1][y].lettre){
+            else if((x + 1) <= 3 && (chemin[x + 1][y] == '0') && motdico[n] == grille[x + 1][y].lettre){
                 x = x + 1;
                 chemin[x][y] = grille[x][y].lettre;
                 empiler(x, y, chemin);
@@ -48,7 +48,7 @@ int trouverchemin(t_case grille[N][N],char motdico[40],int i,int j, int chemin[N
                 n++;
                 chaine[n] = '\0';
             }
-            else if((x + 1) <= 3 && (y - 1) >= 0 && (chemin[x + 1][y - 1] == 0) && motdico[n] == grille[x + 1][y - 1].lettre){
+            else if((x + 1) <= 3 && (y - 1) >= 0 && (chemin[x + 1][y - 1] == '0') && motdico[n] == grille[x + 1][y - 1].lettre){
                 x = x + 1;
                 y = y - 1;
                 chemin[x][y] = grille[x][y].lettre;
@@ -57,7 +57,7 @@ int trouverchemin(t_case grille[N][N],char motdico[40],int i,int j, int chemin[N
                 n++;
                 chaine[n] = '\0';
             }
-            else if((y - 1) >= 0 && (chemin[x][y - 1] == 0)&& motdico[n] == grille[x][y - 1].lettre){
+            else if((y - 1) >= 0 && (chemin[x][y - 1] == '0')&& motdico[n] == grille[x][y - 1].lettre){
                 y = y - 1;
                 chemin[x][y] = grille[x][y].lettre;
                 empiler(x, y, chemin);
@@ -65,7 +65,7 @@ int trouverchemin(t_case grille[N][N],char motdico[40],int i,int j, int chemin[N
                 n++;
                 chaine[n] = '\0';
             }
-            else if((x - 1) >= 0 && (y - 1) >= 0 && (chemin[x - 1][y - 1] == 0) && motdico[n] == grille[x - 1][y - 1].lettre){
+            else if((x - 1) >= 0 && (y - 1) >= 0 && (chemin[x - 1][y - 1] == '0') && motdico[n] == grille[x - 1][y - 1].lettre){
                 x = x - 1;
                 y = y - 1;
                 chemin[x][y] = grille[x][y].lettre;
@@ -74,7 +74,7 @@ int trouverchemin(t_case grille[N][N],char motdico[40],int i,int j, int chemin[N
                 n++;
                 chaine[n] = '\0';
             }
-            else if((x - 1) >= 0 && (chemin[x - 1][y] == 0) && motdico[n] == grille[x - 1][y].lettre){
+            else if((x - 1) >= 0 && (chemin[x - 1][y] == '0') && motdico[n] == grille[x - 1][y].lettre){
                 x = x - 1;
                 chemin[x][y] = grille[x][y].lettre;
                 empiler(x, y, chemin);
@@ -82,7 +82,7 @@ int trouverchemin(t_case grille[N][N],char motdico[40],int i,int j, int chemin[N
                 n++;
                 chaine[n] = '\0';
             }
-            else if((x - 1) >= 0 && (y + 1) <= 3 && (chemin[x - 1][y + 1] == 0) && motdico[n] == grille[x - 1][y + 1].lettre){
+            else if((x - 1) >= 0 && (y + 1) <= 3 && (chemin[x - 1][y + 1] == '0') && motdico[n] == grille[x - 1][y + 1].lettre){
                 x = x - 1;
                 y = y + 1;
                 chemin[x][y] = grille[x][y].lettre;
@@ -102,7 +102,7 @@ int trouverchemin(t_case grille[N][N],char motdico[40],int i,int j, int chemin[N
     return 0;
 }
 
-int motpresent(t_case grille[N][N], char motdico[40], int chemin[N][N]){
+int motpresent(t_case grille[N][N], char motdico[40], char chemin[N][N]){
     int i, j;
     for(i=0; i<N; i++){
         for(j=0; j<N; j++){
@@ -118,7 +118,7 @@ int motpresent(t_case grille[N][N], char motdico[40], int chemin[N][N]){
 
 void trouverListe(t_case grille[N][N]){
     char motdico[40];
-    int chemin[N][N];
+    char chemin[N][N];
     int nbPoints;
     FILE * dico;
     dico = fopen("dico.txt","r");

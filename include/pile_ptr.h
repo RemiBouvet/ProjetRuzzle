@@ -7,11 +7,11 @@
 
 void initpile(void);
 
-void CopierMatrice(int T1[N][N], int T2[N][N]);
+void CopierMatrice(char T1[N][N], char T2[N][N]);
 
 //int pilevide(void);
 
-void empiler(int x2, int y2, int chemin2[4][4]);
+void empiler(int x2, int y2, char chemin2[N][N]);
 
-void depiler(int *x2, int *y2, int chemin2[4][4]);
+void depiler(int *x2, int *y2, char chemin2[N][N]);
 

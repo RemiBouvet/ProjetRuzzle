@@ -13,7 +13,7 @@ void initpile(void){
 	return (pile == NULL);
 }*/
 
-void CopierMatrice(int T1[N][N], int T2[N][N]){
+void CopierMatrice(char T1[N][N], char T2[N][N]){
 	int i, j;
 	for(i=0; i < N; i++){
 		for(j=0; j < N; j++){
@@ -22,7 +22,7 @@ void CopierMatrice(int T1[N][N], int T2[N][N]){
 	}
 }
 
-void empiler(int x2, int y2, int chemin2[N][N]){
+void empiler(int x2, int y2, char chemin2[N][N]){
 	t_element* nouv;
 
 	nouv = (t_element*)malloc(sizeof(t_element));
@@ -33,7 +33,7 @@ void empiler(int x2, int y2, int chemin2[N][N]){
 	pile = nouv;
 }
 
-void depiler(int *x2, int *y2, int chemin2[N][N]){
+void depiler(int *x2, int *y2, char chemin2[N][N]){
 	t_element* sommet;
 
 	if(pile!=NULL){
