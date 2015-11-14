@@ -1,2 +1,7 @@
-points.c à surveiller
-traitement.c erreur de segmentation à la manipulation des fichiers
+Programme terminé (normalement ...)
+
+todo liste:
+gdb
+test cunit
+doxygen
+rapport

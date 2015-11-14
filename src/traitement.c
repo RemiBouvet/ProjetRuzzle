@@ -165,5 +165,6 @@ void tri(t_score T[1000], int * tailleListe){
 	}
 	*tailleListe = compteur;
 	fclose(liste);
+	remove("liste.txt");
 }
 
