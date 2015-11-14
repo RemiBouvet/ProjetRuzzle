@@ -8,11 +8,6 @@ t_element *pile;
 void initpile(void){
 	pile = 	NULL;
 }
-
-/*int pilevide(void){
-	return (pile == NULL);
-}*/
-
 void CopierMatrice(char T1[N][N], char T2[N][N]){
 	int i, j;
 	for(i=0; i < N; i++){
@@ -45,9 +40,3 @@ void depiler(int *x2, int *y2, char chemin2[N][N]){
 		free(sommet);
 	}
 }
-
-/*char sommetpile(void){
-	if(pile!=NULL){
-		return (pile->c);
-	}
-}*/

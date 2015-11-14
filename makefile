@@ -8,7 +8,7 @@ INCLUDE=/include/
 main: main.o affichage.o generer.o pile_ptr.o points.o traitement.o
 	$(CC) main.o affichage.o generer.o pile_ptr.o points.o traitement.o -o .$(DIR_EXEC)$(NOM_EXEC) $(FLAG)
 
-affichage.o: .$(SRC)affichage.c .$(INCLUDE)affichage.h .$(INCLUDE)structure.h
+affichage.o: .$(SRC)affichage.c .$(INCLUDE)affichage.h .$(INCLUDE)structure.h .$(INCLUDE)couleur.h
 	$(CC) -c .$(SRC)affichage.c $(FLAG)
 
 generer.o: .$(SRC)generer.c .$(INCLUDE)generer.h .$(INCLUDE)structure.h

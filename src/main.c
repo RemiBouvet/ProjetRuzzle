@@ -19,11 +19,11 @@ int main(void){
     t_score Liste[1000];
     int tailleListe;
     generation(grille);
-    afficher_bonus(grille);
+    printf("\n\n\t  RUZZLE SOLVER\n");
     afficher_matrice(grille);
     trouverListe(grille);
     tri(Liste, &tailleListe);
+    printf("Voici la liste des mots trouve dans la grille et leur nombre de points :\n");
     afficher_liste(tailleListe, Liste);
-
-	return 0;
+    return 0;
 }
