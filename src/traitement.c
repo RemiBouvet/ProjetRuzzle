@@ -120,12 +120,13 @@ void trouverListe(t_case grille[N][N]){
     char motdico[40];
     char chemin[N][N];
     int nbPoints;
-    FILE * dico;
+    FILE * dico = NULL;
     dico = fopen("dico.txt","r");
-    FILE * liste;
+    FILE * liste = NULL;
     liste = fopen("liste.txt","w");
     if(dico == NULL){
-        fopen("/bin/dico.txt","r");
+	printf("test");
+        dico = fopen("bin/dico.txt","r");
     }
     while(!feof(dico)){
         fscanf(dico,"%s", motdico);
