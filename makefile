@@ -1,26 +1,30 @@
 CC=gcc
 FLAG=-Wall
+NOM_EXEC=ruzzlesolver
+DIR_EXEC=/bin/
+SRC=/src/
+INCLUDE=/include/
 
 main: main.o affichage.o generer.o pile_ptr.o points.o traitement.o
-	$(CC) main.o affichage.o generer.o pile_ptr.o points.o traitement.o -o ./bin/ruzzlesolver $(FLAG)
+	$(CC) main.o affichage.o generer.o pile_ptr.o points.o traitement.o -o .$(DIR_EXEC)$(NOM_EXEC) $(FLAG)
 
-affichage.o: ./src/affichage.c ./include/affichage.h ./include/structure.h
-	$(CC) -c ./src/affichage.c $(FLAG)
+affichage.o: .$(SRC)affichage.c .$(INCLUDE)affichage.h .$(INCLUDE)structure.h
+	$(CC) -c .$(SRC)affichage.c $(FLAG)
 
-generer.o: ./src/generer.c ./include/generer.h ./include/structure.h
-	$(CC) -c ./src/generer.c $(FLAG)
+generer.o: .$(SRC)generer.c .$(INCLUDE)generer.h .$(INCLUDE)structure.h
+	$(CC) -c .$(SRC)generer.c $(FLAG)
 
-pile_ptr.o: ./src/pile_ptr.c ./include/pile_ptr.h ./include/structure.h
-	$(CC) -c ./src/pile_ptr.c $(FLAG)
+pile_ptr.o: .$(SRC)pile_ptr.c .$(INCLUDE)pile_ptr.h .$(INCLUDE)structure.h
+	$(CC) -c .$(SRC)pile_ptr.c $(FLAG)
 
-points.o: ./src/points.c ./include/points.h ./include/structure.h
-	$(CC) -c ./src/points.c $(FLAG)
+points.o: .$(SRC)points.c .$(INCLUDE)points.h .$(INCLUDE)structure.h
+	$(CC) -c .$(SRC)points.c $(FLAG)
 
-traitement.o: ./src/traitement.c ./include/traitement.h ./include/structure.h
-	$(CC) -c ./src/traitement.c $(FLAG)
+traitement.o: .$(SRC)traitement.c .$(INCLUDE)traitement.h .$(INCLUDE)structure.h
+	$(CC) -c .$(SRC)traitement.c $(FLAG)
 
-main.o: ./src/main.c ./src/affichage.c ./src/generer.c ./src/pile_ptr.c ./src/points.c ./src/traitement.c ./src/points.c
-	$(CC) -c ./src/main.c $(FLAG)
+main.o: .$(SRC)main.c .$(SRC)affichage.c .$(SRC)generer.c .$(SRC)pile_ptr.c .$(SRC)points.c .$(SRC)traitement.c .$(SRC)points.c
+	$(CC) -c .$(SRC)main.c $(FLAG)
 
 clean:
 	rm -rf *.o
