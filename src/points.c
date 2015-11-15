@@ -1,9 +1,23 @@
+/**
+ * \file points.c
+ * \brief Fichier qui contient toutes les fonctions qui comptent le nombre de point d'un mot.
+ * \author BOUVET Rémi & PRADERE-NIQUET Alexandre
+ * \version 1.0
+ * \date 15 novembre 2015
+ */
+
 #include <stdio.h>
 #include <string.h>
 #include "../include/structure.h"
 #define N 4
 
-
+/**
+ * \fn int points_lettre(char lettre)
+ * \brief Fonction qui permet de connaitre le nombre de point initial d'une lettre.
+ *
+ * \param Prend un caractère en paramètre.
+ * \return Retourne le nombre de point associé à la lettre.
+ */
 int points_lettre(char lettre){
     int points = 0;
     if(lettre == 'a') points =  1;
@@ -35,6 +49,13 @@ int points_lettre(char lettre){
     return points;
 }
 
+/**
+ * \fn int calculPoint(t_case grille[N][N], char motdico[40], char chemin[N][N])
+ * \brief Fonction qui permet de calculer le nombre total de point d'un mot en prenant en compte sa longueur et ses bonus.
+ *
+ * \param Prend en paramètre la grille du jeu, le mot présent dans la grille et son chemin associé.
+ * \return Retourne le nombre de point associé au mot.
+ */
 int calculPoint(t_case grille[N][N], char motdico[40], char chemin[N][N]){
     int nbPoints = 0;
     int length = strlen(motdico);
