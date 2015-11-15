@@ -125,7 +125,6 @@ void trouverListe(t_case grille[N][N]){
     FILE * liste = NULL;
     liste = fopen("liste.txt","w");
     if(dico == NULL){
-	printf("test");
         dico = fopen("bin/dico.txt","r");
     }
     while(!feof(dico)){
