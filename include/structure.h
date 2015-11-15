@@ -6,8 +6,8 @@
  * \date 15 novembre 2015
  */
 
-#ifndef COULEURS
-#define COULEURS
+#ifndef STRUCTURE
+#define STRUCTURE
 
 #define N 4
 
@@ -33,6 +33,6 @@ typedef struct {char mot[20]; int points;} t_score;
  * \struct element structure.h Structure
  * \brief Definition de la structure de la pile qui contient des coordonnées x,y, la matrice chemin et le pointeur sur l'élement suivant.
  */
-typedef struct element{int x; int y; char chemin[N][N]; struct element* suivant;} t_element;
+typedef struct element{int x; int y; int chemin[N][N]; char cheminMot[N][N]; struct element* suivant;} t_element;
 
 #endif

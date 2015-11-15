@@ -12,9 +12,9 @@
 #define N 4
 
 int points_lettre(char lettre);
-int points_lettre_bonus(t_case grille[N][N], char chemin[N][N]);
+int points_lettre_bonus(t_case grille[N][N], char cheminMot[N][N]);
 int points_longueur(char mot[40]);
-void points_mot_bonus(int * nbPoints,t_case grille[N][N], char chemin[N][N]);
-int calculPoint(t_case grille[N][N], char mot[40], char chemin[N][N]);
+void points_mot_bonus(int * nbPoints,t_case grille[N][N], char cheminMot[N][N]);
+int calculPoint(t_case grille[N][N], char mot[40], char cheminMot[N][N]);
 
 #endif

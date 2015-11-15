@@ -1,5 +1,5 @@
 CC=gcc
-FLAG=-Wall
+FLAG=-Wall -Wextra -Werror
 NOM_EXEC=ruzzlesolver
 DIR_EXEC=/bin/
 SRC=/src/

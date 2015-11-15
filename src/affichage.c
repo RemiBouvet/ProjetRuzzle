@@ -16,6 +16,9 @@
  *
  * \param Prend en paramètre la grille.
  * \return Ne retourne rien.
+ *
+ * Utilisation de la fonction couleur contenu dans couleur.h est une directive préprocesseur pour pouvoir faciliter la mise en place des couleurs.
+ *
  */
 void afficher_matrice(t_case grille[N][N]){
     couleur(0);

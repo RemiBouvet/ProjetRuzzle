@@ -20,7 +20,7 @@
  */
 int points_lettre(char lettre){
     int points = 0;
-    if(lettre == 'a') points =  1;
+    if(lettre == 'a') points = 1;
     if(lettre == 'b') points = 3;
     if(lettre == 'c') points = 3;
     if(lettre == 'd') points = 2;
@@ -50,25 +50,30 @@ int points_lettre(char lettre){
 }
 
 /**
- * \fn int points_lettre_bonus(t_case grille[N][N], char chemin[N][N])
+ * \fn int points_lettre_bonus(t_case grille[N][N], char cheminMot[N][N])
  * \brief Fonction qui permet de calculer le nombre de point de chaque lettre et de leur bonus associé.
  *
  * \param Prend en paramètre la grille et le chemin associé.
  * \return Retourne le nombre de point associé aux lettres du mot.
+ *
+ * La fonction parcour le chemin affin d'attribuer les points adaptés quand nous rencontrons une lettre dans chemin mais nous vérifions également si il n'y a pas un bonus lié à la lettre.
+ *
  */
-int points_lettre_bonus(t_case grille[N][N], char chemin[N][N]){
+int points_lettre_bonus(t_case grille[N][N], char cheminMot[N][N]){
     int points = 0;
     int i, j;
     for(i=0; i<N; i++){
         for(j=0; j<N; j++){
-            if(grille[i][j].bonus == LettreDouble && chemin[i][j] != '0'){
-                points += points_lettre(chemin[i][j])*2;
+            if(grille[i][j].bonus == LettreDouble && cheminMot[i][j] != '0'){
+                points += points_lettre(cheminMot[i][j])*2;
+                printf("LettreDouble");
             }
-            else if(grille[i][j].bonus == LettreTriple && chemin[i][j] != '0'){
-                points += points_lettre(chemin[i][j])*3;
+            else if(grille[i][j].bonus == LettreTriple && cheminMot[i][j] != '0'){
+                points += points_lettre(cheminMot[i][j])*3;
+                printf("LettreTriple");
             }
             else{
-                points += points_lettre(chemin[i][j]);
+                points += points_lettre(cheminMot[i][j]);
             }
         }
     }
@@ -104,36 +109,43 @@ int points_longueur(char mot[40]){
 }
 
 /**
- * \fn void points_mot_bonus(int * nbPoints,t_case grille[N][N], char chemin[N][N])
+ * \fn void points_mot_bonus(int * nbPoints,t_case grille[N][N], char cheminMot[N][N])
  * \brief Fonction qui permet de calculer le bonus au niveau du mot.
  *
  * \param Prend en paramètre la grille du jeu, le chemin associé et un pointeur sur une varible points.
  * \return Ne retourne rien.
+ *
+ * La fonction est similaire à points_lettre_bonus mais elle gère les bonus lié au mot.
+ *
  */
-void points_mot_bonus(int * nbPoints,t_case grille[N][N], char chemin[N][N]){
+void points_mot_bonus(int * nbPoints,t_case grille[N][N], char cheminMot[N][N]){
     int i, j;
     for(i=0; i<N; i++){
         for(j=0; j<N; j++){
-            if(grille[i][j].bonus == MotDouble && chemin[i][j] != '0'){
+            if(grille[i][j].bonus == MotDouble && cheminMot[i][j] != '0'){
                 *nbPoints = *nbPoints * 2;
+                printf("Motdouble");
             }
-            else if(grille[i][j].bonus == MotTriple && chemin[i][j] != '0'){
+            else if(grille[i][j].bonus == MotTriple && cheminMot[i][j] != '0'){
+                printf("Mottriple");
                *nbPoints = *nbPoints * 3;
             }
         }
     }
 }
 /**
- * \fn int calculPoint(t_case grille[N][N], char motdico[40], char chemin[N][N])
+ * \fn int calculPoint(t_case grille[N][N], char motdico[40], char cheminMot[N][N])
  * \brief Fonction qui permet de calculer le nombre total de point d'un mot en prenant en compte sa longueur et ses bonus.
  *
  * \param Prend en paramètre la grille du jeu, le mot présent dans la grille et son chemin associé.
  * \return Retourne le nombre de point associé au mot.
  */
-int calculPoint(t_case grille[N][N], char mot[40], char chemin[N][N]){
+int calculPoint(t_case grille[N][N], char mot[40], char cheminMot[N][N]){
     int nbPoints = 0;
     nbPoints += points_longueur(mot);
-    nbPoints += points_lettre_bonus(grille, chemin);
-    points_mot_bonus(&nbPoints, grille, chemin);
+    printf("\nlongueur : %i", nbPoints);
+    nbPoints += points_lettre_bonus(grille, cheminMot);
+    printf("\nlettre : %i\n", nbPoints);
+    points_mot_bonus(&nbPoints, grille, cheminMot);
     return nbPoints;
 }

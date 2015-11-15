@@ -20,97 +20,111 @@
  * \param Prend en paramètre la grille, le mot à trouver, les coordonnées i,j à partir desquels il faut trouver un chemin et la matrice chemin.
  * \return Retourne 1 si le mot est présent sinon retourne 0.
  */
-int trouverchemin(t_case grille[N][N],char motdico[40],int i,int j, char chemin[N][N]){
+int trouverchemin(t_case grille[N][N],char motdico[40],int i,int j, int chemin[N][N], char cheminMot[N][N]){
     char chaine[40];
     int k, l;
     int n = 1;
-    int x, y;
+    int x, y, xPrec, yPrec;
     for(k=0; k<N; k++){
             for(l=0; l<N; l++){
-                chemin[k][l] = '0';
+                chemin[k][l] = 0;
+                cheminMot[k][l] = '0';
             }
         }
         initpile();
         x = i;
         y = j;
-        chemin[x][y] = grille[x][y].lettre;
-        empiler(i, j, chemin);
+        xPrec = x;
+        yPrec = y;
+        chemin[x][y] = 1;
+        empiler(i, j, chemin, cheminMot);
         while(n > 0){
-            if((y + 1) <= 3 && (chemin[x][y + 1] == '0')&& motdico[n] == grille[x][y + 1].lettre){
+            if((y + 1) <= 3 && (chemin[x][y + 1] == 0)&& motdico[n] == grille[x][y + 1].lettre){
                 y = y + 1;
-                chemin[x][y] = grille[x][y].lettre;
-                empiler(x, y, chemin);
+                chemin[x][y] = 1;
+                cheminMot[xPrec][yPrec] = grille[x][y].lettre;
+                empiler(i, j, chemin, cheminMot);
                 strcpy(chaine,motdico);
                 n++;
                 chaine[n] = '\0';
             }
-            else if((x + 1) <= 3 && (y + 1) <= 3 && (chemin[x + 1][y + 1] == '0') && motdico[n] == grille[x + 1][y + 1].lettre){
+            else if((x + 1) <= 3 && (y + 1) <= 3 && (chemin[x + 1][y + 1] == 0) && motdico[n] == grille[x + 1][y + 1].lettre){
                 x = x + 1;
                 y = y + 1;
-                chemin[x][y] = grille[x][y].lettre;
-                empiler(x, y, chemin);
+                chemin[x][y] = 1;
+                cheminMot[xPrec][yPrec] = grille[x][y].lettre;
+                empiler(i, j, chemin, cheminMot);
                 strcpy(chaine,motdico);
                 n++;
                 chaine[n] = '\0';
             }
-            else if((x + 1) <= 3 && (chemin[x + 1][y] == '0') && motdico[n] == grille[x + 1][y].lettre){
+            else if((x + 1) <= 3 && (chemin[x + 1][y] == 0) && motdico[n] == grille[x + 1][y].lettre){
                 x = x + 1;
-                chemin[x][y] = grille[x][y].lettre;
-                empiler(x, y, chemin);
+                chemin[x][y] = 1;
+                cheminMot[xPrec][yPrec] = grille[x][y].lettre;
+                empiler(i, j, chemin, cheminMot);
                 strcpy(chaine,motdico);
                 n++;
                 chaine[n] = '\0';
             }
-            else if((x + 1) <= 3 && (y - 1) >= 0 && (chemin[x + 1][y - 1] == '0') && motdico[n] == grille[x + 1][y - 1].lettre){
+            else if((x + 1) <= 3 && (y - 1) >= 0 && (chemin[x + 1][y - 1] == 0) && motdico[n] == grille[x + 1][y - 1].lettre){
                 x = x + 1;
                 y = y - 1;
-                chemin[x][y] = grille[x][y].lettre;
-                empiler(x, y, chemin);
+                chemin[x][y] = 1;
+                cheminMot[xPrec][yPrec] = grille[x][y].lettre;
+                empiler(i, j, chemin, cheminMot);
                 strcpy(chaine,motdico);
                 n++;
                 chaine[n] = '\0';
             }
-            else if((y - 1) >= 0 && (chemin[x][y - 1] == '0')&& motdico[n] == grille[x][y - 1].lettre){
+            else if((y - 1) >= 0 && (chemin[x][y - 1] == 0)&& motdico[n] == grille[x][y - 1].lettre){
                 y = y - 1;
-                chemin[x][y] = grille[x][y].lettre;
-                empiler(x, y, chemin);
+                chemin[x][y] = 1;
+                cheminMot[xPrec][yPrec] = grille[x][y].lettre;
+                empiler(i, j, chemin, cheminMot);
                 strcpy(chaine,motdico);
                 n++;
                 chaine[n] = '\0';
             }
-            else if((x - 1) >= 0 && (y - 1) >= 0 && (chemin[x - 1][y - 1] == '0') && motdico[n] == grille[x - 1][y - 1].lettre){
+            else if((x - 1) >= 0 && (y - 1) >= 0 && (chemin[x - 1][y - 1] == 0) && motdico[n] == grille[x - 1][y - 1].lettre){
                 x = x - 1;
                 y = y - 1;
-                chemin[x][y] = grille[x][y].lettre;
-                empiler(x, y, chemin);
+                chemin[x][y] = 1;
+                cheminMot[xPrec][yPrec] = grille[x][y].lettre;
+                empiler(i, j, chemin, cheminMot);
                 strcpy(chaine,motdico);
                 n++;
                 chaine[n] = '\0';
             }
-            else if((x - 1) >= 0 && (chemin[x - 1][y] == '0') && motdico[n] == grille[x - 1][y].lettre){
+            else if((x - 1) >= 0 && (chemin[x - 1][y] == 0) && motdico[n] == grille[x - 1][y].lettre){
                 x = x - 1;
-                chemin[x][y] = grille[x][y].lettre;
-                empiler(x, y, chemin);
+                chemin[x][y] = 1;
+                cheminMot[xPrec][yPrec] = grille[x][y].lettre;
+                empiler(i, j, chemin, cheminMot);
                 strcpy(chaine,motdico);
                 n++;
                 chaine[n] = '\0';
             }
-            else if((x - 1) >= 0 && (y + 1) <= 3 && (chemin[x - 1][y + 1] == '0') && motdico[n] == grille[x - 1][y + 1].lettre){
+            else if((x - 1) >= 0 && (y + 1) <= 3 && (chemin[x - 1][y + 1] == 0) && motdico[n] == grille[x - 1][y + 1].lettre){
                 x = x - 1;
                 y = y + 1;
-                chemin[x][y] = grille[x][y].lettre;
-                empiler(x, y, chemin);
+                chemin[x][y] = 1;
+                cheminMot[xPrec][yPrec] = grille[x][y].lettre;
+                empiler(i, j, chemin, cheminMot);
                 strcpy(chaine,motdico);
                 n++;
                 chaine[n] = '\0';
             }
             else {
-                depiler(&x, &y, chemin);
+                depiler(&x, &y, chemin, cheminMot);
                 n--;
             }
             if(strcmp(motdico,chaine) == 0 && strlen(motdico) > 2){
+                cheminMot[x][y] = grille[x][y].lettre;
                 return 1;
             }
+        xPrec = x;
+        yPrec = y;
         }
     return 0;
 }
@@ -121,13 +135,16 @@ int trouverchemin(t_case grille[N][N],char motdico[40],int i,int j, char chemin[
  *
  * \param Prend en paramètre la grille, le mot à trouver et la matrice chemin.
  * \return Retourne 1 si le mot est présent sinon retourne 0.
+ *
+ * Avec cette fonction nous allons parcourir toute les cases de la grille ce qui aura pour conséquence de changer le point du départ du chemin.
+ *
  */
-int motpresent(t_case grille[N][N], char motdico[40], char chemin[N][N]){
+int motpresent(t_case grille[N][N], char motdico[40], int chemin[N][N], char cheminMot[N][N]){
     int i, j;
     for(i=0; i<N; i++){
         for(j=0; j<N; j++){
             if(motdico[0] == grille[i][j].lettre){
-                if(trouverchemin(grille, motdico, i, j, chemin)){
+                if(trouverchemin(grille, motdico, i, j, chemin, cheminMot)){
                     return 1;
                 }
             }
@@ -145,20 +162,22 @@ int motpresent(t_case grille[N][N], char motdico[40], char chemin[N][N]){
  */
 void trouverListe(t_case grille[N][N]){
     char motdico[40];
-    char chemin[N][N];
+    int chemin[N][N];
+    char cheminMot[N][N];
     int nbPoints;
     FILE * dico = NULL;
     dico = fopen("dico.txt","r");
     FILE * liste = NULL;
     liste = fopen("liste.txt","w");
-    if(dico == NULL){
+    if(dico == NULL){   //Permet d'executer notre programme depuis le répertoire précédent sinon le dictionnaire n'est pas trouvé à l'execution.
         dico = fopen("bin/dico.txt","r");
     }
-    while(!feof(dico)){
+    while(!feof(dico)){     //Pour chaque mot du dictionnaire nous regardons si il se trouve dans la grille dans le cas où il est présent nous récupérons sa matrice chemin qui contient uniquement les lettres du mot dans la matrice.
         fscanf(dico,"%s", motdico);
-        if (motpresent(grille, motdico, chemin)){
-            nbPoints = calculPoint(grille, motdico, chemin);
-            fprintf(liste, "%s %i\n", motdico, nbPoints);
+        if (motpresent(grille, motdico, chemin, cheminMot)){
+            nbPoints = calculPoint(grille, motdico, cheminMot);    //Calcul du nombre de point associé au mot.
+            printf("%s %i\n", motdico, nbPoints);
+            fprintf(liste, "%s %i\n", motdico, nbPoints);   //Nous sauvegardons tous les mots et leur points correspondant dans un fichier qui n'est pas encore trié.
         }
     }
     fclose(dico);
@@ -177,14 +196,14 @@ void tri(t_score T[1000], int * tailleListe){
     int nbPoints, compteur = 0;
     FILE * liste;
     liste = fopen("liste.txt","r");
-    while(!feof(liste)){
+    while(!feof(liste)){    //Nous récupèrons les mots et nombre de points non trié dans le fichier pour le stocker dans un tableau que l'on pourra lui, trier.
         fscanf(liste,"%s %i", mot, &nbPoints);
         strcpy(T[compteur].mot, mot);
         T[compteur].points = nbPoints;
         compteur++;
     }
 	int i, j;
-	for(i=0; i < compteur ; i++){
+	for(i=0; i < compteur ; i++){  //Nous utilisons un tri bulle pour trier nos données.
 		for(j = compteur-1; j > i ; j--){
 			if (T[j-1].points > T[j].points){
 				nbPoints = T[j].points;
@@ -198,6 +217,5 @@ void tri(t_score T[1000], int * tailleListe){
 	}
 	*tailleListe = compteur;
 	fclose(liste);
-	remove("liste.txt");
+	remove("liste.txt");   //Nous avons fait le choix de supprimer le fichier à la fin du tri.
 }
-
