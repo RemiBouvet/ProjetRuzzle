@@ -1,0 +1,119 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.10"/>
+<title>Ruzzle Solver:  Fichier source de include/structure.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { init_search(); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Ruzzle Solver
+   </div>
+   <div id="projectbrief">Créationd&#39;unsolverdeRuzzle</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.8.10 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Page&#160;principale</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="files.html"><span>Fichiers</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Recherche" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Liste&#160;des&#160;fichiers</span></a></li>
+      <li><a href="globals.html"><span>Membres&#160;de&#160;fichier</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">structure.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="structure_8h.html">Aller à la documentation de ce fichier.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#ifndef COULEURS</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#define COULEURS</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#define N 4</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;</div>
+<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="structure_8h.html#a4dfb649c60c07e69175f04af6e69d33e">   18</a></span>&#160;<span class="keyword">enum</span> <a class="code" href="structure_8h.html#a4dfb649c60c07e69175f04af6e69d33e">t_bonus</a> {aucun, LettreDouble, LettreTriple, MotDouble, MotTriple};</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;</div>
+<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="structt__case.html">   24</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span>{<span class="keywordtype">int</span> lettre; <span class="keyword">enum</span> <a class="code" href="structure_8h.html#a4dfb649c60c07e69175f04af6e69d33e">t_bonus</a> bonus;} <a class="code" href="structt__case.html">t_case</a>;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div>
+<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="structt__score.html">   30</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span>{<span class="keywordtype">char</span> mot[20]; <span class="keywordtype">int</span> points;} <a class="code" href="structt__score.html">t_score</a>;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;</div>
+<div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="structelement.html">   36</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="structelement.html">element</a>{<span class="keywordtype">int</span> x; <span class="keywordtype">int</span> y; <span class="keywordtype">char</span> chemin[N][N]; <span class="keyword">struct </span><a class="code" href="structelement.html">element</a>* suivant;} <a class="code" href="structelement.html">t_element</a>;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="ttc" id="structure_8h_html_a4dfb649c60c07e69175f04af6e69d33e"><div class="ttname"><a href="structure_8h.html#a4dfb649c60c07e69175f04af6e69d33e">t_bonus</a></div><div class="ttdeci">t_bonus</div><div class="ttdoc">Cette enumération permet de définir plus facilement les bonus. </div><div class="ttdef"><b>Definition:</b> <a href="structure_8h_source.html#l00018">structure.h:18</a></div></div>
+<div class="ttc" id="structelement_html"><div class="ttname"><a href="structelement.html">element</a></div><div class="ttdoc">Definition de la structure de la pile qui contient des coordonnées x,y, la matrice chemin et le point...</div><div class="ttdef"><b>Definition:</b> <a href="structure_8h_source.html#l00036">structure.h:36</a></div></div>
+<div class="ttc" id="structt__case_html"><div class="ttname"><a href="structt__case.html">t_case</a></div><div class="ttdoc">Definition d&#39;une case qui est une lettre avec son bonus qui lui est associé. </div><div class="ttdef"><b>Definition:</b> <a href="structure_8h_source.html#l00024">structure.h:24</a></div></div>
+<div class="ttc" id="structt__score_html"><div class="ttname"><a href="structt__score.html">t_score</a></div><div class="ttdoc">Definition d&#39;une structure qui permet de rassembler le mot et son nombre de point. </div><div class="ttdef"><b>Definition:</b> <a href="structure_8h_source.html#l00030">structure.h:30</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré par &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.10
+</small></address>
+</body>
+</html>

@@ -1,8 +1,22 @@
+/**
+ * \file affichage.c
+ * \brief Fichier qui contient les fonctions qui permettent de réaliser de l'affichage.
+ * \author BOUVET Rémi & PRADERE-NIQUET Alexandre
+ * \version 1.0
+ * \date 15 novembre 2015
+ */
 #include <stdio.h>
 #include "../include/structure.h"
 #include "../include/couleur.h"
 #define N 4
 
+/**
+ * \fn void afficher_matrice(t_case grille[N][N])
+ * \brief Fonction qui permet d'afficher la grille et sa légende.
+ *
+ * \param Prend en paramètre la grille.
+ * \return Ne retourne rien.
+ */
 void afficher_matrice(t_case grille[N][N]){
     couleur(0);
     int i, j, k;
@@ -51,9 +65,16 @@ void afficher_matrice(t_case grille[N][N]){
     printf("\n\n");
 }
 
-void afficher_liste(int compteur, t_score T[1000]){
+/**
+ * \fn void afficher_liste(int compteur, t_score T[1000])
+ * \brief Fonction qui permet d'afficher la liste des mots trié en fonction de leur score.
+ *
+ * \param Prend en paramètre le nombre de mot et le tableau des mots et des scores.
+ * \return Ne retourne rien.
+ */
+void afficher_liste(int nbmot, t_score T[1000]){
     int i;
-    for(i = compteur - 1; i >= 0; i--){
+    for(i = nbmot - 1; i >= 0; i--){
         printf("%s : %i points\n", T[i].mot, T[i].points);
 	}
 }

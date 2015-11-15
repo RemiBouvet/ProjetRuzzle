@@ -1,3 +1,10 @@
+/**
+ * \file main.c
+ * \brief Fichier qui contient la fonction main et donc les appels des fonctions principales.
+ * \author BOUVET Rémi & PRADERE-NIQUET Alexandre
+ * \version 1.0
+ * \date 15 novembre 2015
+ */
 #include <stdlib.h>
 #include <stdio.h>
 #include <unistd.h>
@@ -13,7 +20,13 @@
 
 #define N 4
 
-
+/**
+ * \fn int main(void)
+ * \brief Fonction main.
+ *
+ * \param Ne prend pas de paramètres.
+ * \return Retourne 0;
+ */
 int main(void){
     t_case grille[N][N];
     t_score Liste[1000];

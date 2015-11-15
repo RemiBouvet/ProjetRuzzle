@@ -1,5 +1,12 @@
-#ifndef COULEURS
+/**
+ * \file couleur.h
+ * \brief Fichier qui contient les prototypes de l'utilisation des couleurs.
+ * \author BOUVET Rémi & PRADERE-NIQUET Alexandre
+ * \version 1.0
+ * \date 15 novembre 2015
+ */
 
+#ifndef COULEURS
 #define COULEURS
 
 

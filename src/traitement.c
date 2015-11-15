@@ -1,3 +1,10 @@
+/**
+ * \file traitement.c
+ * \brief Fichier qui contient toutes les fonctions qui traitent la grille.
+ * \author BOUVET Rémi & PRADERE-NIQUET Alexandre
+ * \version 1.0
+ * \date 15 novembre 2015
+ */
 #include <stdio.h>
 #include <string.h>
 #include "../include/structure.h"
@@ -6,7 +13,13 @@
 
 #define N 4
 
-
+/**
+ * \fn int trouverchemin(t_case grille[N][N],char motdico[40],int i,int j, char chemin[N][N])
+ * \brief Fonction qui permet de parcourir tous les chemins de la matrice à partir d'une case et qui calcul le chemin associé si le mot est présent.
+ *
+ * \param Prend en paramètre la grille, le mot à trouver, les coordonnées i,j à partir desquels il faut trouver un chemin et la matrice chemin.
+ * \return Retourne 1 si le mot est présent sinon retourne 0.
+ */
 int trouverchemin(t_case grille[N][N],char motdico[40],int i,int j, char chemin[N][N]){
     char chaine[40];
     int k, l;
@@ -102,6 +115,13 @@ int trouverchemin(t_case grille[N][N],char motdico[40],int i,int j, char chemin[
     return 0;
 }
 
+/**
+ * \fn int motpresent(t_case grille[N][N], char motdico[40], char chemin[N][N])
+ * \brief Fonction qui permet de determiner si un mot est présent dans la matrice et de calculer son chemin.
+ *
+ * \param Prend en paramètre la grille, le mot à trouver et la matrice chemin.
+ * \return Retourne 1 si le mot est présent sinon retourne 0.
+ */
 int motpresent(t_case grille[N][N], char motdico[40], char chemin[N][N]){
     int i, j;
     for(i=0; i<N; i++){
@@ -116,6 +136,13 @@ int motpresent(t_case grille[N][N], char motdico[40], char chemin[N][N]){
     return 0;
 }
 
+/**
+ * \fn void trouverListe(t_case grille[N][N])
+ * \brief Fonction qui enregistre dans un fichier temporaire tous les mots présents dans la matrice ainsi que leurs points associés.
+ *
+ * \param Prend en paramètre la grille.
+ * \return Ne retourne rien.
+ */
 void trouverListe(t_case grille[N][N]){
     char motdico[40];
     char chemin[N][N];
@@ -138,6 +165,13 @@ void trouverListe(t_case grille[N][N]){
     fclose(liste);
 }
 
+/**
+ * void tri(t_score T[1000], int * tailleListe)
+ * \brief Fonction qui récupère tous les mots et leurs points correspondant pour les trier.
+ *
+ * \param Prend en paramètre le tableau qui stocke les mots et leurs points associés ainsi que un pointeur sur le nombre de mot.
+ * \return Ne retourne rien.
+ */
 void tri(t_score T[1000], int * tailleListe){
     char mot[20];
     int nbPoints, compteur = 0;

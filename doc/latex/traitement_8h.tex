@@ -1,0 +1,140 @@
+\hypertarget{traitement_8h}{}\section{Référence du fichier include/traitement.h}
+\label{traitement_8h}\index{include/traitement.\+h@{include/traitement.\+h}}
+
+
+Fichier qui contient tout les prototypes de \hyperlink{traitement_8c}{traitement.\+c}.  
+
+
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{traitement_8h_a0240ac851181b84ac374872dc5434ee4}{}\#define {\bfseries N}~4\label{traitement_8h_a0240ac851181b84ac374872dc5434ee4}
+
+\end{DoxyCompactItemize}
+\subsection*{Fonctions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{traitement_8h_ae3067c7cd3382c115c5a497ad3f8bd57}{trouverchemin} (\hyperlink{structt__case}{t\+\_\+case} grille\mbox{[}N\mbox{]}\mbox{[}N\mbox{]}, char motdico\mbox{[}40\mbox{]}, int i, int j, char chemin\mbox{[}N\mbox{]}\mbox{[}N\mbox{]})
+\begin{DoxyCompactList}\small\item\em Fonction qui permet de parcourir tous les chemins de la matrice à partir d\textquotesingle{}une case et qui calcul le chemin associé si le mot est présent. \end{DoxyCompactList}\item 
+int \hyperlink{traitement_8h_a8df66ad8e9a6e13c18b7001561db4194}{motpresent} (\hyperlink{structt__case}{t\+\_\+case} grille\mbox{[}N\mbox{]}\mbox{[}N\mbox{]}, char motdico\mbox{[}40\mbox{]}, char chemin\mbox{[}N\mbox{]}\mbox{[}N\mbox{]})
+\begin{DoxyCompactList}\small\item\em Fonction qui permet de determiner si un mot est présent dans la matrice et de calculer son chemin. \end{DoxyCompactList}\item 
+void \hyperlink{traitement_8h_af38304f3718d12ae5f3424a12a841103}{trouver\+Liste} (\hyperlink{structt__case}{t\+\_\+case} grille\mbox{[}N\mbox{]}\mbox{[}N\mbox{]})
+\begin{DoxyCompactList}\small\item\em Fonction qui enregistre dans un fichier temporaire tous les mots présents dans la matrice ainsi que leurs points associés. \end{DoxyCompactList}\item 
+void \hyperlink{traitement_8h_ab160ae699802dc5e10cda59e2d335e73}{tri} (\hyperlink{structt__score}{t\+\_\+score} T\mbox{[}1000\mbox{]}, int $\ast$taille\+Liste)
+\begin{DoxyCompactList}\small\item\em Fonction qui récupère tous les mots et leurs points correspondant pour les trier. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Description détaillée}
+Fichier qui contient tout les prototypes de \hyperlink{traitement_8c}{traitement.\+c}. 
+
+\begin{DoxyAuthor}{Auteur}
+B\+O\+U\+V\+E\+T Rémi \& P\+R\+A\+D\+E\+R\+E-\/\+N\+I\+Q\+U\+E\+T Alexandre 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+15 novembre 2015 
+\end{DoxyDate}
+
+
+\subsection{Documentation des fonctions}
+\hypertarget{traitement_8h_a8df66ad8e9a6e13c18b7001561db4194}{}\index{traitement.\+h@{traitement.\+h}!motpresent@{motpresent}}
+\index{motpresent@{motpresent}!traitement.\+h@{traitement.\+h}}
+\subsubsection[{motpresent(t\+\_\+case grille[N][N], char motdico[40], char chemin[N][N])}]{\setlength{\rightskip}{0pt plus 5cm}int motpresent (
+\begin{DoxyParamCaption}
+\item[{{\bf t\+\_\+case}}]{grille\mbox{[}\+N\mbox{]}\mbox{[}\+N\mbox{]}, }
+\item[{char}]{motdico\mbox{[}40\mbox{]}, }
+\item[{char}]{chemin\mbox{[}\+N\mbox{]}\mbox{[}\+N\mbox{]}}
+\end{DoxyParamCaption}
+)}\label{traitement_8h_a8df66ad8e9a6e13c18b7001561db4194}
+
+
+Fonction qui permet de determiner si un mot est présent dans la matrice et de calculer son chemin. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em Prend} & en paramètre la grille, le mot à trouver et la matrice chemin. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+Retourne 1 si le mot est présent sinon retourne 0. 
+\end{DoxyReturn}
+
+
+Définition à la ligne 125 du fichier traitement.\+c.
+
+\hypertarget{traitement_8h_ab160ae699802dc5e10cda59e2d335e73}{}\index{traitement.\+h@{traitement.\+h}!tri@{tri}}
+\index{tri@{tri}!traitement.\+h@{traitement.\+h}}
+\subsubsection[{tri(t\+\_\+score T[1000], int $\ast$taille\+Liste)}]{\setlength{\rightskip}{0pt plus 5cm}void tri (
+\begin{DoxyParamCaption}
+\item[{{\bf t\+\_\+score}}]{T\mbox{[}1000\mbox{]}, }
+\item[{int $\ast$}]{taille\+Liste}
+\end{DoxyParamCaption}
+)}\label{traitement_8h_ab160ae699802dc5e10cda59e2d335e73}
+
+
+Fonction qui récupère tous les mots et leurs points correspondant pour les trier. 
+
+void \hyperlink{traitement_8c_ab160ae699802dc5e10cda59e2d335e73}{tri(t\+\_\+score T\mbox{[}1000\mbox{]}, int $\ast$ taille\+Liste)} 
+\begin{DoxyParams}{Paramètres}
+{\em Prend} & en paramètre le tableau qui stocke les mots et leurs points associés ainsi que un pointeur sur le nombre de mot. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+Ne retourne rien. 
+\end{DoxyReturn}
+
+
+Définition à la ligne 175 du fichier traitement.\+c.
+
+\hypertarget{traitement_8h_ae3067c7cd3382c115c5a497ad3f8bd57}{}\index{traitement.\+h@{traitement.\+h}!trouverchemin@{trouverchemin}}
+\index{trouverchemin@{trouverchemin}!traitement.\+h@{traitement.\+h}}
+\subsubsection[{trouverchemin(t\+\_\+case grille[N][N], char motdico[40], int i, int j, char chemin[N][N])}]{\setlength{\rightskip}{0pt plus 5cm}int trouverchemin (
+\begin{DoxyParamCaption}
+\item[{{\bf t\+\_\+case}}]{grille\mbox{[}\+N\mbox{]}\mbox{[}\+N\mbox{]}, }
+\item[{char}]{motdico\mbox{[}40\mbox{]}, }
+\item[{int}]{i, }
+\item[{int}]{j, }
+\item[{char}]{chemin\mbox{[}\+N\mbox{]}\mbox{[}\+N\mbox{]}}
+\end{DoxyParamCaption}
+)}\label{traitement_8h_ae3067c7cd3382c115c5a497ad3f8bd57}
+
+
+Fonction qui permet de parcourir tous les chemins de la matrice à partir d\textquotesingle{}une case et qui calcul le chemin associé si le mot est présent. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em Prend} & en paramètre la grille, le mot à trouver, les coordonnées i,j à partir desquels il faut trouver un chemin et la matrice chemin. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+Retourne 1 si le mot est présent sinon retourne 0. 
+\end{DoxyReturn}
+
+
+Définition à la ligne 23 du fichier traitement.\+c.
+
+\hypertarget{traitement_8h_af38304f3718d12ae5f3424a12a841103}{}\index{traitement.\+h@{traitement.\+h}!trouver\+Liste@{trouver\+Liste}}
+\index{trouver\+Liste@{trouver\+Liste}!traitement.\+h@{traitement.\+h}}
+\subsubsection[{trouver\+Liste(t\+\_\+case grille[N][N])}]{\setlength{\rightskip}{0pt plus 5cm}void trouver\+Liste (
+\begin{DoxyParamCaption}
+\item[{{\bf t\+\_\+case}}]{grille\mbox{[}\+N\mbox{]}\mbox{[}\+N\mbox{]}}
+\end{DoxyParamCaption}
+)}\label{traitement_8h_af38304f3718d12ae5f3424a12a841103}
+
+
+Fonction qui enregistre dans un fichier temporaire tous les mots présents dans la matrice ainsi que leurs points associés. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em Prend} & en paramètre la grille. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+Ne retourne rien. 
+\end{DoxyReturn}
+
+
+Définition à la ligne 146 du fichier traitement.\+c.
+

@@ -50,53 +50,90 @@ int points_lettre(char lettre){
 }
 
 /**
+ * \fn int points_lettre_bonus(t_case grille[N][N], char chemin[N][N])
+ * \brief Fonction qui permet de calculer le nombre de point de chaque lettre et de leur bonus associé.
+ *
+ * \param Prend en paramètre la grille et le chemin associé.
+ * \return Retourne le nombre de point associé aux lettres du mot.
+ */
+int points_lettre_bonus(t_case grille[N][N], char chemin[N][N]){
+    int points = 0;
+    int i, j;
+    for(i=0; i<N; i++){
+        for(j=0; j<N; j++){
+            if(grille[i][j].bonus == LettreDouble && chemin[i][j] != '0'){
+                points += points_lettre(chemin[i][j])*2;
+            }
+            else if(grille[i][j].bonus == LettreTriple && chemin[i][j] != '0'){
+                points += points_lettre(chemin[i][j])*3;
+            }
+            else{
+                points += points_lettre(chemin[i][j]);
+            }
+        }
+    }
+    return points;
+}
+
+/**
+ * \fn int points_longueur(char mot[40])
+ * \brief Fonction qui permet de calculer nombre de points associé à la longueur du mot.
+ *
+ * \param Prend en paramètre un mot.
+ * \return Retourne le nombre de point de la longueur du mot.
+ */
+int points_longueur(char mot[40]){
+    int points = 0;
+    int length = strlen(mot);
+    if (length == 5){
+        points += 5;
+    }
+    else if (length == 6){
+        points += 10;
+    }
+    else if (length == 7){
+        points += 15;
+    }
+    else if (length == 8){
+        points += 20;
+    }
+    else if (length > 8){
+        points += 25;
+    }
+    return points;
+}
+
+/**
+ * \fn void points_mot_bonus(int * nbPoints,t_case grille[N][N], char chemin[N][N])
+ * \brief Fonction qui permet de calculer le bonus au niveau du mot.
+ *
+ * \param Prend en paramètre la grille du jeu, le chemin associé et un pointeur sur une varible points.
+ * \return Ne retourne rien.
+ */
+void points_mot_bonus(int * nbPoints,t_case grille[N][N], char chemin[N][N]){
+    int i, j;
+    for(i=0; i<N; i++){
+        for(j=0; j<N; j++){
+            if(grille[i][j].bonus == MotDouble && chemin[i][j] != '0'){
+                *nbPoints = *nbPoints * 2;
+            }
+            else if(grille[i][j].bonus == MotTriple && chemin[i][j] != '0'){
+               *nbPoints = *nbPoints * 3;
+            }
+        }
+    }
+}
+/**
  * \fn int calculPoint(t_case grille[N][N], char motdico[40], char chemin[N][N])
  * \brief Fonction qui permet de calculer le nombre total de point d'un mot en prenant en compte sa longueur et ses bonus.
  *
  * \param Prend en paramètre la grille du jeu, le mot présent dans la grille et son chemin associé.
  * \return Retourne le nombre de point associé au mot.
  */
-int calculPoint(t_case grille[N][N], char motdico[40], char chemin[N][N]){
+int calculPoint(t_case grille[N][N], char mot[40], char chemin[N][N]){
     int nbPoints = 0;
-    int length = strlen(motdico);
-    if (length == 5){
-        nbPoints += 5;
-    }
-    else if (length == 6){
-        nbPoints += 10;
-    }
-    else if (length == 7){
-        nbPoints += 15;
-    }
-    else if (length == 8){
-        nbPoints += 20;
-    }
-    else if (length > 8){
-        nbPoints += 25;
-    }
-    int i, j;
-    for(i=0; i<N; i++){
-        for(j=0; j<N; j++){
-            if(grille[i][j].bonus == LettreDouble && chemin[i][j] != '0'){
-                nbPoints += points_lettre(chemin[i][j])*2;
-            }
-            else if(grille[i][j].bonus == LettreTriple && chemin[i][j] != '0'){
-                nbPoints += points_lettre(chemin[i][j])*3;
-            }
-            else{
-                nbPoints += points_lettre(chemin[i][j]);
-            }
-        }
-    }
-    for(i=0; i<N; i++){
-        for(j=0; j<N; j++){
-                    if(grille[i][j].bonus == MotDouble && chemin[i][j] != '0'){
-                        nbPoints = nbPoints * 2;
-                    }
-                    else if(grille[i][j].bonus == MotTriple && chemin[i][j] != '0'){
-                        nbPoints = nbPoints * 3;
-                    }
-        }
-    }
+    nbPoints += points_longueur(mot);
+    nbPoints += points_lettre_bonus(grille, chemin);
+    points_mot_bonus(&nbPoints, grille, chemin);
     return nbPoints;
 }
