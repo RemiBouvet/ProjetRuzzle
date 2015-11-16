@@ -3,16 +3,15 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<meta name="generator" content="Doxygen 1.8.10"/>
+<meta name="generator" content="Doxygen 1.8.3.1"/>
 <title>Ruzzle Solver: Référence de la structure element</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
 <script type="text/javascript">
-  $(document).ready(function() { init_search(); });
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
 </script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
@@ -22,7 +21,7 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
-  <td id="projectalign" style="padding-left: 0.5em;">
+  <td style="padding-left: 0.5em;">
    <div id="projectname">Ruzzle Solver
    </div>
    <div id="projectbrief">Créationd&#39;unsolverdeRuzzle</div>
@@ -32,7 +31,7 @@
 </table>
 </div>
 <!-- end header part -->
-<!-- Généré par Doxygen 1.8.10 -->
+<!-- Généré par Doxygen 1.8.3.1 -->
 <script type="text/javascript">
 var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
 </script>
@@ -71,7 +70,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-</div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Fichiers</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Fonctions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Énumérations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -90,7 +89,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
 </div><!--header-->
 <div class="contents">
 
-<p>Definition de la structure de la pile qui contient des coordonnées x,y, la matrice chemin et le pointeur sur l'élement suivant.  
+<p>Definition de la structure de la pile qui contient des coordonnées x,y, la matrice chemin qui indique le chemin par lequel on est déjà passé, la matrice cheminMot qui contient les lettres du mot dans une matrice vide et le pointeur sur l'élement suivant.  
  <a href="structelement.html#details">Plus de détails...</a></p>
 
 <p><code>#include &lt;<a class="el" href="structure_8h_source.html">Structure</a>&gt;</code></p>
@@ -103,15 +102,18 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>x</b></td></tr>
 <tr class="memitem:a434c348427ff30755ba723ab1180d070"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a434c348427ff30755ba723ab1180d070"></a>
 int&#160;</td><td class="memItemRight" valign="bottom"><b>y</b></td></tr>
 <tr class="separator:a434c348427ff30755ba723ab1180d070"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6c5d7a8071a7e6410f9a08b72836023a"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a6c5d7a8071a7e6410f9a08b72836023a"></a>
-char&#160;</td><td class="memItemRight" valign="bottom"><b>chemin</b> [N][N]</td></tr>
-<tr class="separator:a6c5d7a8071a7e6410f9a08b72836023a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a28553e86dd9c0b009a5abf35a0aabc0c"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a28553e86dd9c0b009a5abf35a0aabc0c"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>chemin</b> [N][N]</td></tr>
+<tr class="separator:a28553e86dd9c0b009a5abf35a0aabc0c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a354f5cb4a63d5fac439df62ce3c9772a"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a354f5cb4a63d5fac439df62ce3c9772a"></a>
+char&#160;</td><td class="memItemRight" valign="bottom"><b>cheminMot</b> [N][N]</td></tr>
+<tr class="separator:a354f5cb4a63d5fac439df62ce3c9772a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4f1534ded1f9373e0843568bf94ea754"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a4f1534ded1f9373e0843568bf94ea754"></a>
 struct <a class="el" href="structelement.html">element</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>suivant</b></td></tr>
 <tr class="separator:a4f1534ded1f9373e0843568bf94ea754"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Description détaillée</h2>
-<div class="textblock"><p>Definition de la structure de la pile qui contient des coordonnées x,y, la matrice chemin et le pointeur sur l'élement suivant. </p>
+<div class="textblock"><p>Definition de la structure de la pile qui contient des coordonnées x,y, la matrice chemin qui indique le chemin par lequel on est déjà passé, la matrice cheminMot qui contient les lettres du mot dans une matrice vide et le pointeur sur l'élement suivant. </p>
 
 <p>Définition à la ligne <a class="el" href="structure_8h_source.html#l00036">36</a> du fichier <a class="el" href="structure_8h_source.html">structure.h</a>.</p>
 </div><hr/>La documentation de cette structure a été générée à partir du fichier suivant :<ul>
@@ -122,7 +124,7 @@ struct <a class="el" href="structelement.html">element</a> *&#160;</td><td class
 <hr class="footer"/><address class="footer"><small>
 Généré par &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
-</a> 1.8.10
+</a> 1.8.3.1
 </small></address>
 </body>
 </html>

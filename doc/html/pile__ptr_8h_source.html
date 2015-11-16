@@ -3,16 +3,15 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<meta name="generator" content="Doxygen 1.8.10"/>
+<meta name="generator" content="Doxygen 1.8.3.1"/>
 <title>Ruzzle Solver:  Fichier source de include/pile_ptr.h</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
 <script type="text/javascript">
-  $(document).ready(function() { init_search(); });
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
 </script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
@@ -22,7 +21,7 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
-  <td id="projectalign" style="padding-left: 0.5em;">
+  <td style="padding-left: 0.5em;">
    <div id="projectname">Ruzzle Solver
    </div>
    <div id="projectbrief">Créationd&#39;unsolverdeRuzzle</div>
@@ -32,7 +31,7 @@
 </table>
 </div>
 <!-- end header part -->
-<!-- Généré par Doxygen 1.8.10 -->
+<!-- Généré par Doxygen 1.8.3.1 -->
 <script type="text/javascript">
 var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
 </script>
@@ -71,7 +70,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-</div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Fichiers</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Fonctions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Énumérations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -92,31 +91,27 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
 <div class="contents">
 <a href="pile__ptr_8h.html">Aller à la documentation de ce fichier.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;</div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#ifndef PILE_PTR</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#define PILE_PTR</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define PILE_PTR</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor"></span></div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#define N 4</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="keywordtype">void</span> <a class="code" href="pile__ptr_8h.html#ac4e8451a9141ddd60fd45e98cf741aad">initpile</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="keywordtype">void</span> <a class="code" href="pile__ptr_8c.html#ac4e8451a9141ddd60fd45e98cf741aad" title="Fonction qui initialise la pile.">initpile</a>(<span class="keywordtype">void</span>);</div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="keywordtype">void</span> <a class="code" href="pile__ptr_8h.html#a7024e12f28fa12e7835b8940054ed4fa">CopierMatrice</a>(<span class="keywordtype">char</span> T1[N][N], <span class="keywordtype">char</span> T2[N][N]);</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="keywordtype">void</span> <a class="code" href="pile__ptr_8c.html#a32763e6c32a4c1eaeaf6ef2506c75bd8" title="Fonction qui copie une matrice d&#39;entier dans une autre.">CopierMatrice</a>(<span class="keywordtype">int</span> T1[N][N], <span class="keywordtype">int</span> T2[N][N]);</div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment">//int pilevide(void);</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="keywordtype">void</span> CopierMatriceChar(<span class="keywordtype">char</span> T1[N][N], <span class="keywordtype">char</span> T2[N][N]);</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="keywordtype">void</span> <a class="code" href="pile__ptr_8h.html#afd2bb36dec2c145c8f3a581ba51819ed">empiler</a>(<span class="keywordtype">int</span> x2, <span class="keywordtype">int</span> y2, <span class="keywordtype">char</span> chemin2[N][N]);</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="keywordtype">void</span> <a class="code" href="pile__ptr_8c.html#adb04b55431aad69713d72ef9c5a0f950" title="Fonction qui ajoute un élément à notre pile.">empiler</a>(<span class="keywordtype">int</span> x2, <span class="keywordtype">int</span> y2, <span class="keywordtype">int</span> chemin2[N][N], <span class="keywordtype">char</span> cheminMot2[N][N]);</div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="keywordtype">void</span> <a class="code" href="pile__ptr_8h.html#a2e632b78b736358faa9b599fd08e54e5">depiler</a>(<span class="keywordtype">int</span> *x2, <span class="keywordtype">int</span> *y2, <span class="keywordtype">char</span> chemin2[N][N]);</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="keywordtype">void</span> <a class="code" href="pile__ptr_8c.html#a67a024f12ec91981008eb78665a41eab" title="Fonction qui permet de retirer un élément de la pile et d&#39;attribuer sa valeur aux élément placés en p...">depiler</a>(<span class="keywordtype">int</span> *x2, <span class="keywordtype">int</span> *y2, <span class="keywordtype">int</span> chemin2[N][N], <span class="keywordtype">char</span> cheminMot2[N][N]);</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;</div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="ttc" id="pile__ptr_8h_html_afd2bb36dec2c145c8f3a581ba51819ed"><div class="ttname"><a href="pile__ptr_8h.html#afd2bb36dec2c145c8f3a581ba51819ed">empiler</a></div><div class="ttdeci">void empiler(int x2, int y2, char chemin2[N][N])</div><div class="ttdoc">Fonction qui ajoute un élément à notre pile. </div><div class="ttdef"><b>Definition:</b> <a href="pile__ptr_8c_source.html#l00054">pile_ptr.c:54</a></div></div>
-<div class="ttc" id="pile__ptr_8h_html_ac4e8451a9141ddd60fd45e98cf741aad"><div class="ttname"><a href="pile__ptr_8h.html#ac4e8451a9141ddd60fd45e98cf741aad">initpile</a></div><div class="ttdeci">void initpile(void)</div><div class="ttdoc">Fonction qui initialise la pile. </div><div class="ttdef"><b>Definition:</b> <a href="pile__ptr_8c_source.html#l00026">pile_ptr.c:26</a></div></div>
-<div class="ttc" id="pile__ptr_8h_html_a2e632b78b736358faa9b599fd08e54e5"><div class="ttname"><a href="pile__ptr_8h.html#a2e632b78b736358faa9b599fd08e54e5">depiler</a></div><div class="ttdeci">void depiler(int *x2, int *y2, char chemin2[N][N])</div><div class="ttdoc">Fonction qui permet de retirer un élément de la pile et d&#39;attribuer sa valeur aux élément placés en p...</div><div class="ttdef"><b>Definition:</b> <a href="pile__ptr_8c_source.html#l00072">pile_ptr.c:72</a></div></div>
-<div class="ttc" id="pile__ptr_8h_html_a7024e12f28fa12e7835b8940054ed4fa"><div class="ttname"><a href="pile__ptr_8h.html#a7024e12f28fa12e7835b8940054ed4fa">CopierMatrice</a></div><div class="ttdeci">void CopierMatrice(char T1[N][N], char T2[N][N])</div><div class="ttdoc">Fonction qui copie une matrice de caractère dans une autre. </div><div class="ttdef"><b>Definition:</b> <a href="pile__ptr_8c_source.html#l00037">pile_ptr.c:37</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Généré par &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
-</a> 1.8.10
+</a> 1.8.3.1
 </small></address>
 </body>
 </html>

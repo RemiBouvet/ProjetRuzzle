@@ -1,14 +1,15 @@
-\hypertarget{pile__ptr_8h}{}\section{Référence du fichier include/pile\+\_\+ptr.h}
-\label{pile__ptr_8h}\index{include/pile\+\_\+ptr.\+h@{include/pile\+\_\+ptr.\+h}}
+\hypertarget{pile__ptr_8h}{\section{Référence du fichier include/pile\-\_\-ptr.h}
+\label{pile__ptr_8h}\index{include/pile\-\_\-ptr.\-h@{include/pile\-\_\-ptr.\-h}}
+}
 
 
-Fichier qui contient tout les prototypes de \hyperlink{pile__ptr_8c}{pile\+\_\+ptr.\+c}.  
+Fichier qui contient tout les prototypes de \hyperlink{pile__ptr_8c}{pile\-\_\-ptr.\-c}.  
 
 
 \subsection*{Macros}
 \begin{DoxyCompactItemize}
 \item 
-\hypertarget{pile__ptr_8h_a0240ac851181b84ac374872dc5434ee4}{}\#define {\bfseries N}~4\label{pile__ptr_8h_a0240ac851181b84ac374872dc5434ee4}
+\hypertarget{pile__ptr_8h_a0240ac851181b84ac374872dc5434ee4}{\#define {\bfseries N}~4}\label{pile__ptr_8h_a0240ac851181b84ac374872dc5434ee4}
 
 \end{DoxyCompactItemize}
 \subsection*{Fonctions}
@@ -16,44 +17,59 @@ Fichier qui contient tout les prototypes de \hyperlink{pile__ptr_8c}{pile\+\_\+p
 \item 
 void \hyperlink{pile__ptr_8h_ac4e8451a9141ddd60fd45e98cf741aad}{initpile} (void)
 \begin{DoxyCompactList}\small\item\em Fonction qui initialise la pile. \end{DoxyCompactList}\item 
-void \hyperlink{pile__ptr_8h_a7024e12f28fa12e7835b8940054ed4fa}{Copier\+Matrice} (char T1\mbox{[}N\mbox{]}\mbox{[}N\mbox{]}, char T2\mbox{[}N\mbox{]}\mbox{[}N\mbox{]})
-\begin{DoxyCompactList}\small\item\em Fonction qui copie une matrice de caractère dans une autre. \end{DoxyCompactList}\item 
-void \hyperlink{pile__ptr_8h_afd2bb36dec2c145c8f3a581ba51819ed}{empiler} (int x2, int y2, char chemin2\mbox{[}N\mbox{]}\mbox{[}N\mbox{]})
+void \hyperlink{pile__ptr_8h_a1981835f949cdb59fb0d84a333c6cd24}{Copier\-Matrice} (int T1\mbox{[}N\mbox{]}\mbox{[}N\mbox{]}, int T2\mbox{[}N\mbox{]}\mbox{[}N\mbox{]})
+\begin{DoxyCompactList}\small\item\em Fonction qui copie une matrice d'entier dans une autre. \end{DoxyCompactList}\item 
+\hypertarget{pile__ptr_8h_afd6125d9b014d9064d6b0a2765721367}{void {\bfseries Copier\-Matrice\-Char} (char T1\mbox{[}N\mbox{]}\mbox{[}N\mbox{]}, char T2\mbox{[}N\mbox{]}\mbox{[}N\mbox{]})}\label{pile__ptr_8h_afd6125d9b014d9064d6b0a2765721367}
+
+\item 
+void \hyperlink{pile__ptr_8h_adb04b55431aad69713d72ef9c5a0f950}{empiler} (int x2, int y2, int chemin2\mbox{[}N\mbox{]}\mbox{[}N\mbox{]}, char chemin\-Mot2\mbox{[}N\mbox{]}\mbox{[}N\mbox{]})
 \begin{DoxyCompactList}\small\item\em Fonction qui ajoute un élément à notre pile. \end{DoxyCompactList}\item 
-void \hyperlink{pile__ptr_8h_a2e632b78b736358faa9b599fd08e54e5}{depiler} (int $\ast$x2, int $\ast$y2, char chemin2\mbox{[}N\mbox{]}\mbox{[}N\mbox{]})
-\begin{DoxyCompactList}\small\item\em Fonction qui permet de retirer un élément de la pile et d\textquotesingle{}attribuer sa valeur aux élément placés en paramètre. \end{DoxyCompactList}\end{DoxyCompactItemize}
+void \hyperlink{pile__ptr_8h_a67a024f12ec91981008eb78665a41eab}{depiler} (int $\ast$x2, int $\ast$y2, int chemin2\mbox{[}N\mbox{]}\mbox{[}N\mbox{]}, char chemin\-Mot2\mbox{[}N\mbox{]}\mbox{[}N\mbox{]})
+\begin{DoxyCompactList}\small\item\em Fonction qui permet de retirer un élément de la pile et d'attribuer sa valeur aux élément placés en paramètre. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Description détaillée}
-Fichier qui contient tout les prototypes de \hyperlink{pile__ptr_8c}{pile\+\_\+ptr.\+c}. 
-
-\begin{DoxyAuthor}{Auteur}
-B\+O\+U\+V\+E\+T Rémi \& P\+R\+A\+D\+E\+R\+E-\/\+N\+I\+Q\+U\+E\+T Alexandre 
+Fichier qui contient tout les prototypes de \hyperlink{pile__ptr_8c}{pile\-\_\-ptr.\-c}. \begin{DoxyAuthor}{Auteur}
+B\-O\-U\-V\-E\-T Rémi \& P\-R\-A\-D\-E\-R\-E-\/\-N\-I\-Q\-U\-E\-T Alexandre 
 \end{DoxyAuthor}
 \begin{DoxyVersion}{Version}
-1.\+0 
+1.\-0 
 \end{DoxyVersion}
 \begin{DoxyDate}{Date}
 15 novembre 2015 
 \end{DoxyDate}
 
 
+Définition dans le fichier \hyperlink{pile__ptr_8h_source}{pile\-\_\-ptr.\-h}.
+
+
+
 \subsection{Documentation des fonctions}
-\hypertarget{pile__ptr_8h_a7024e12f28fa12e7835b8940054ed4fa}{}\index{pile\+\_\+ptr.\+h@{pile\+\_\+ptr.\+h}!Copier\+Matrice@{Copier\+Matrice}}
-\index{Copier\+Matrice@{Copier\+Matrice}!pile\+\_\+ptr.\+h@{pile\+\_\+ptr.\+h}}
-\subsubsection[{Copier\+Matrice(char T1[N][N], char T2[N][N])}]{\setlength{\rightskip}{0pt plus 5cm}void Copier\+Matrice (
+\hypertarget{pile__ptr_8h_a1981835f949cdb59fb0d84a333c6cd24}{\index{pile\-\_\-ptr.\-h@{pile\-\_\-ptr.\-h}!Copier\-Matrice@{Copier\-Matrice}}
+\index{Copier\-Matrice@{Copier\-Matrice}!pile_ptr.h@{pile\-\_\-ptr.\-h}}
+\subsubsection[{Copier\-Matrice}]{\setlength{\rightskip}{0pt plus 5cm}void Copier\-Matrice (
 \begin{DoxyParamCaption}
-\item[{char}]{T1\mbox{[}\+N\mbox{]}\mbox{[}\+N\mbox{]}, }
-\item[{char}]{T2\mbox{[}\+N\mbox{]}\mbox{[}\+N\mbox{]}}
+\item[{int}]{t1\mbox{[}\-N\mbox{]}\mbox{[}\-N\mbox{]}, }
+\item[{int}]{t2\mbox{[}\-N\mbox{]}\mbox{[}\-N\mbox{]}}
 \end{DoxyParamCaption}
-)}\label{pile__ptr_8h_a7024e12f28fa12e7835b8940054ed4fa}
+)}}\label{pile__ptr_8h_a1981835f949cdb59fb0d84a333c6cd24}
 
 
-Fonction qui copie une matrice de caractère dans une autre. 
+Fonction qui copie une matrice d'entier dans une autre. 
+
+Fonction qui copie une matrice de caractère dans une autre.
 
 
 \begin{DoxyParams}{Paramètres}
-{\em Il} & y a deux mattrice de caractère en paramètre \+: T2 qui se copie dans T1. \\
+{\em Il} & y a deux mattrice de caractère en paramètre \-: t2 qui se copie dans t1. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+Ne retourne rien.
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Paramètres}
+{\em Il} & y a deux mattrice de caractère en paramètre \-: T2 qui se copie dans T1. \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Renvoie}
@@ -61,24 +77,25 @@ Ne retourne rien.
 \end{DoxyReturn}
 
 
-Définition à la ligne 37 du fichier pile\+\_\+ptr.\+c.
+Définition à la ligne 37 du fichier pile\-\_\-ptr.\-c.
 
-\hypertarget{pile__ptr_8h_a2e632b78b736358faa9b599fd08e54e5}{}\index{pile\+\_\+ptr.\+h@{pile\+\_\+ptr.\+h}!depiler@{depiler}}
-\index{depiler@{depiler}!pile\+\_\+ptr.\+h@{pile\+\_\+ptr.\+h}}
-\subsubsection[{depiler(int $\ast$x2, int $\ast$y2, char chemin2[N][N])}]{\setlength{\rightskip}{0pt plus 5cm}void depiler (
+\hypertarget{pile__ptr_8h_a67a024f12ec91981008eb78665a41eab}{\index{pile\-\_\-ptr.\-h@{pile\-\_\-ptr.\-h}!depiler@{depiler}}
+\index{depiler@{depiler}!pile_ptr.h@{pile\-\_\-ptr.\-h}}
+\subsubsection[{depiler}]{\setlength{\rightskip}{0pt plus 5cm}void depiler (
 \begin{DoxyParamCaption}
 \item[{int $\ast$}]{x2, }
 \item[{int $\ast$}]{y2, }
-\item[{char}]{chemin2\mbox{[}\+N\mbox{]}\mbox{[}\+N\mbox{]}}
+\item[{int}]{chemin2\mbox{[}\-N\mbox{]}\mbox{[}\-N\mbox{]}, }
+\item[{char}]{chemin\-Mot2\mbox{[}\-N\mbox{]}\mbox{[}\-N\mbox{]}}
 \end{DoxyParamCaption}
-)}\label{pile__ptr_8h_a2e632b78b736358faa9b599fd08e54e5}
+)}}\label{pile__ptr_8h_a67a024f12ec91981008eb78665a41eab}
 
 
-Fonction qui permet de retirer un élément de la pile et d\textquotesingle{}attribuer sa valeur aux élément placés en paramètre. 
+Fonction qui permet de retirer un élément de la pile et d'attribuer sa valeur aux élément placés en paramètre. 
 
 
 \begin{DoxyParams}{Paramètres}
-{\em Elle} & prend en paramètre les pointeurs $\ast$x2, $\ast$y2 et chemin2. \\
+{\em Elle} & prend en paramètre les pointeurs $\ast$x2, $\ast$y2, chemin2, chemin\-Mot2. \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Renvoie}
@@ -86,24 +103,25 @@ Ne retourne rien.
 \end{DoxyReturn}
 
 
-Définition à la ligne 72 du fichier pile\+\_\+ptr.\+c.
+Définition à la ligne 89 du fichier pile\-\_\-ptr.\-c.
 
-\hypertarget{pile__ptr_8h_afd2bb36dec2c145c8f3a581ba51819ed}{}\index{pile\+\_\+ptr.\+h@{pile\+\_\+ptr.\+h}!empiler@{empiler}}
-\index{empiler@{empiler}!pile\+\_\+ptr.\+h@{pile\+\_\+ptr.\+h}}
-\subsubsection[{empiler(int x2, int y2, char chemin2[N][N])}]{\setlength{\rightskip}{0pt plus 5cm}void empiler (
+\hypertarget{pile__ptr_8h_adb04b55431aad69713d72ef9c5a0f950}{\index{pile\-\_\-ptr.\-h@{pile\-\_\-ptr.\-h}!empiler@{empiler}}
+\index{empiler@{empiler}!pile_ptr.h@{pile\-\_\-ptr.\-h}}
+\subsubsection[{empiler}]{\setlength{\rightskip}{0pt plus 5cm}void empiler (
 \begin{DoxyParamCaption}
 \item[{int}]{x2, }
 \item[{int}]{y2, }
-\item[{char}]{chemin2\mbox{[}\+N\mbox{]}\mbox{[}\+N\mbox{]}}
+\item[{int}]{chemin2\mbox{[}\-N\mbox{]}\mbox{[}\-N\mbox{]}, }
+\item[{char}]{chemin\-Mot2\mbox{[}\-N\mbox{]}\mbox{[}\-N\mbox{]}}
 \end{DoxyParamCaption}
-)}\label{pile__ptr_8h_afd2bb36dec2c145c8f3a581ba51819ed}
+)}}\label{pile__ptr_8h_adb04b55431aad69713d72ef9c5a0f950}
 
 
 Fonction qui ajoute un élément à notre pile. 
 
 
 \begin{DoxyParams}{Paramètres}
-{\em Prend} & en paramètre deux coordonnées x2 et y2 et également la matrice de caractère chemin2. \\
+{\em Prend} & en paramètre deux coordonnées x2 et y2 et également la matrice du chemin emprinté chemin2 et le mot dans une matrice vide chemin\-Mot2. \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Renvoie}
@@ -111,15 +129,15 @@ Ne retourne rien.
 \end{DoxyReturn}
 
 
-Définition à la ligne 54 du fichier pile\+\_\+ptr.\+c.
+Définition à la ligne 70 du fichier pile\-\_\-ptr.\-c.
 
-\hypertarget{pile__ptr_8h_ac4e8451a9141ddd60fd45e98cf741aad}{}\index{pile\+\_\+ptr.\+h@{pile\+\_\+ptr.\+h}!initpile@{initpile}}
-\index{initpile@{initpile}!pile\+\_\+ptr.\+h@{pile\+\_\+ptr.\+h}}
-\subsubsection[{initpile(void)}]{\setlength{\rightskip}{0pt plus 5cm}void initpile (
+\hypertarget{pile__ptr_8h_ac4e8451a9141ddd60fd45e98cf741aad}{\index{pile\-\_\-ptr.\-h@{pile\-\_\-ptr.\-h}!initpile@{initpile}}
+\index{initpile@{initpile}!pile_ptr.h@{pile\-\_\-ptr.\-h}}
+\subsubsection[{initpile}]{\setlength{\rightskip}{0pt plus 5cm}void initpile (
 \begin{DoxyParamCaption}
 \item[{void}]{}
 \end{DoxyParamCaption}
-)}\label{pile__ptr_8h_ac4e8451a9141ddd60fd45e98cf741aad}
+)}}\label{pile__ptr_8h_ac4e8451a9141ddd60fd45e98cf741aad}
 
 
 Fonction qui initialise la pile. 
@@ -134,5 +152,5 @@ Ne retourne rien.
 \end{DoxyReturn}
 
 
-Définition à la ligne 26 du fichier pile\+\_\+ptr.\+c.
+Définition à la ligne 26 du fichier pile\-\_\-ptr.\-c.
 

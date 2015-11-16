@@ -3,16 +3,15 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<meta name="generator" content="Doxygen 1.8.10"/>
+<meta name="generator" content="Doxygen 1.8.3.1"/>
 <title>Ruzzle Solver:  Fichier source de include/generer.h</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
 <script type="text/javascript">
-  $(document).ready(function() { init_search(); });
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
 </script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
@@ -22,7 +21,7 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
-  <td id="projectalign" style="padding-left: 0.5em;">
+  <td style="padding-left: 0.5em;">
    <div id="projectname">Ruzzle Solver
    </div>
    <div id="projectbrief">Créationd&#39;unsolverdeRuzzle</div>
@@ -32,7 +31,7 @@
 </table>
 </div>
 <!-- end header part -->
-<!-- Généré par Doxygen 1.8.10 -->
+<!-- Généré par Doxygen 1.8.3.1 -->
 <script type="text/javascript">
 var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
 </script>
@@ -71,7 +70,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-</div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Fichiers</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Fonctions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Énumérations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -92,23 +91,20 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
 <div class="contents">
 <a href="generer_8h.html">Aller à la documentation de ce fichier.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;</div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#ifndef GENERER</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#define GENERER</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define GENERER</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor"></span></div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#define N 4</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="keywordtype">int</span> <a class="code" href="generer_8h.html#a31044302280c0ec9eca89286f81127af">rand_a_b</a>(<span class="keywordtype">int</span> a, <span class="keywordtype">int</span> b);</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keywordtype">void</span> <a class="code" href="generer_8h.html#a7ce74e6424ae2e628d8fea22f43beeb2">generation</a>(<a class="code" href="structt__case.html">t_case</a> grille[N][N]);</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="keywordtype">int</span> <a class="code" href="generer_8c.html#a31044302280c0ec9eca89286f81127af" title="Fonction qui permet de générer un nombre aléatoire.">rand_a_b</a>(<span class="keywordtype">int</span> a, <span class="keywordtype">int</span> b);</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keywordtype">void</span> <a class="code" href="generer_8c.html#a7ce74e6424ae2e628d8fea22f43beeb2" title="Fonction qui permet de générer la grille de caractère ainsi que les bonus qui lui son associé...">generation</a>(<a class="code" href="structt__case.html" title="Definition d&#39;une case qui est une lettre avec son bonus qui lui est associé.">t_case</a> grille[N][N]);</div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;</div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="ttc" id="generer_8h_html_a31044302280c0ec9eca89286f81127af"><div class="ttname"><a href="generer_8h.html#a31044302280c0ec9eca89286f81127af">rand_a_b</a></div><div class="ttdeci">int rand_a_b(int a, int b)</div><div class="ttdoc">Fonction qui permet de générer un nombre aléatoire. </div><div class="ttdef"><b>Definition:</b> <a href="generer_8c_source.html#l00022">generer.c:22</a></div></div>
-<div class="ttc" id="structt__case_html"><div class="ttname"><a href="structt__case.html">t_case</a></div><div class="ttdoc">Definition d&#39;une case qui est une lettre avec son bonus qui lui est associé. </div><div class="ttdef"><b>Definition:</b> <a href="structure_8h_source.html#l00024">structure.h:24</a></div></div>
-<div class="ttc" id="generer_8h_html_a7ce74e6424ae2e628d8fea22f43beeb2"><div class="ttname"><a href="generer_8h.html#a7ce74e6424ae2e628d8fea22f43beeb2">generation</a></div><div class="ttdeci">void generation(t_case grille[N][N])</div><div class="ttdoc">Fonction qui permet de générer la grille de caractère ainsi que les bonus qui lui son associé...</div><div class="ttdef"><b>Definition:</b> <a href="generer_8c_source.html#l00033">generer.c:33</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Généré par &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
-</a> 1.8.10
+</a> 1.8.3.1
 </small></address>
 </body>
 </html>

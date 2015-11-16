@@ -3,16 +3,15 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<meta name="generator" content="Doxygen 1.8.10"/>
+<meta name="generator" content="Doxygen 1.8.3.1"/>
 <title>Ruzzle Solver: Référence du fichier include/traitement.h</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
 <script type="text/javascript">
-  $(document).ready(function() { init_search(); });
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
 </script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
@@ -22,7 +21,7 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
-  <td id="projectalign" style="padding-left: 0.5em;">
+  <td style="padding-left: 0.5em;">
    <div id="projectname">Ruzzle Solver
    </div>
    <div id="projectbrief">Créationd&#39;unsolverdeRuzzle</div>
@@ -32,7 +31,7 @@
 </table>
 </div>
 <!-- end header part -->
-<!-- Généré par Doxygen 1.8.10 -->
+<!-- Généré par Doxygen 1.8.3.1 -->
 <script type="text/javascript">
 var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
 </script>
@@ -71,7 +70,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-</div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Fichiers</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Fonctions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Énumérations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -94,7 +93,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
 </div><!--header-->
 <div class="contents">
 
-<p>Fichier qui contient tout les prototypes de <a class="el" href="traitement_8c.html" title="Fichier qui contient toutes les fonctions qui traitent la grille. ">traitement.c</a>.  
+<p>Fichier qui contient tout les prototypes de <a class="el" href="traitement_8c.html" title="Fichier qui contient toutes les fonctions qui traitent la grille.">traitement.c</a>.  
 <a href="#details">Plus de détails...</a></p>
 
 <p><a href="traitement_8h_source.html">Aller au code source de ce fichier.</a></p>
@@ -107,70 +106,27 @@ Macros</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Fonctions</h2></td></tr>
-<tr class="memitem:ae3067c7cd3382c115c5a497ad3f8bd57"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="traitement_8h.html#ae3067c7cd3382c115c5a497ad3f8bd57">trouverchemin</a> (<a class="el" href="structt__case.html">t_case</a> grille[N][N], char motdico[40], int i, int j, char chemin[N][N])</td></tr>
-<tr class="memdesc:ae3067c7cd3382c115c5a497ad3f8bd57"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction qui permet de parcourir tous les chemins de la matrice à partir d'une case et qui calcul le chemin associé si le mot est présent.  <a href="#ae3067c7cd3382c115c5a497ad3f8bd57">Plus de détails...</a><br /></td></tr>
-<tr class="separator:ae3067c7cd3382c115c5a497ad3f8bd57"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8df66ad8e9a6e13c18b7001561db4194"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="traitement_8h.html#a8df66ad8e9a6e13c18b7001561db4194">motpresent</a> (<a class="el" href="structt__case.html">t_case</a> grille[N][N], char motdico[40], char chemin[N][N])</td></tr>
-<tr class="memdesc:a8df66ad8e9a6e13c18b7001561db4194"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction qui permet de determiner si un mot est présent dans la matrice et de calculer son chemin.  <a href="#a8df66ad8e9a6e13c18b7001561db4194">Plus de détails...</a><br /></td></tr>
-<tr class="separator:a8df66ad8e9a6e13c18b7001561db4194"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ade51c5df2029d0158ed54cde87dfdd25"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ade51c5df2029d0158ed54cde87dfdd25"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>trouverchemin</b> (<a class="el" href="structt__case.html">t_case</a> grille[N][N], char motdico[40], int i, int j, int chemin[N][N], char cheminMot[N][N])</td></tr>
+<tr class="separator:ade51c5df2029d0158ed54cde87dfdd25"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af6697a37ff4d26a73fbe7f90e2159a95"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af6697a37ff4d26a73fbe7f90e2159a95"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>motpresent</b> (<a class="el" href="structt__case.html">t_case</a> grille[N][N], char motdico[40], int chemin[N][N], char cheminMot[N][N])</td></tr>
+<tr class="separator:af6697a37ff4d26a73fbe7f90e2159a95"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af38304f3718d12ae5f3424a12a841103"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="traitement_8h.html#af38304f3718d12ae5f3424a12a841103">trouverListe</a> (<a class="el" href="structt__case.html">t_case</a> grille[N][N])</td></tr>
-<tr class="memdesc:af38304f3718d12ae5f3424a12a841103"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction qui enregistre dans un fichier temporaire tous les mots présents dans la matrice ainsi que leurs points associés.  <a href="#af38304f3718d12ae5f3424a12a841103">Plus de détails...</a><br /></td></tr>
+<tr class="memdesc:af38304f3718d12ae5f3424a12a841103"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction qui enregistre dans un fichier temporaire tous les mots présents dans la matrice ainsi que leurs points associés.  <a href="#af38304f3718d12ae5f3424a12a841103">Plus de détails...</a><br/></td></tr>
 <tr class="separator:af38304f3718d12ae5f3424a12a841103"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab160ae699802dc5e10cda59e2d335e73"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="traitement_8h.html#ab160ae699802dc5e10cda59e2d335e73">tri</a> (<a class="el" href="structt__score.html">t_score</a> T[1000], int *tailleListe)</td></tr>
-<tr class="memdesc:ab160ae699802dc5e10cda59e2d335e73"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction qui récupère tous les mots et leurs points correspondant pour les trier.  <a href="#ab160ae699802dc5e10cda59e2d335e73">Plus de détails...</a><br /></td></tr>
+<tr class="memdesc:ab160ae699802dc5e10cda59e2d335e73"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction qui récupère tous les mots et leurs points correspondant pour les trier.  <a href="#ab160ae699802dc5e10cda59e2d335e73">Plus de détails...</a><br/></td></tr>
 <tr class="separator:ab160ae699802dc5e10cda59e2d335e73"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Description détaillée</h2>
-<div class="textblock"><p>Fichier qui contient tout les prototypes de <a class="el" href="traitement_8c.html" title="Fichier qui contient toutes les fonctions qui traitent la grille. ">traitement.c</a>. </p>
+<div class="textblock"><p>Fichier qui contient tout les prototypes de <a class="el" href="traitement_8c.html" title="Fichier qui contient toutes les fonctions qui traitent la grille.">traitement.c</a>. </p>
 <dl class="section author"><dt>Auteur</dt><dd>BOUVET Rémi &amp; PRADERE-NIQUET Alexandre </dd></dl>
 <dl class="section version"><dt>Version</dt><dd>1.0 </dd></dl>
 <dl class="section date"><dt>Date</dt><dd>15 novembre 2015 </dd></dl>
 
 <p>Définition dans le fichier <a class="el" href="traitement_8h_source.html">traitement.h</a>.</p>
 </div><h2 class="groupheader">Documentation des fonctions</h2>
-<a class="anchor" id="a8df66ad8e9a6e13c18b7001561db4194"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int motpresent </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="structt__case.html">t_case</a>&#160;</td>
-          <td class="paramname"><em>grille</em>[N][N], </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">char&#160;</td>
-          <td class="paramname"><em>motdico</em>[40], </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">char&#160;</td>
-          <td class="paramname"><em>chemin</em>[N][N]&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Fonction qui permet de determiner si un mot est présent dans la matrice et de calculer son chemin. </p>
-<dl class="params"><dt>Paramètres</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">Prend</td><td>en paramètre la grille, le mot à trouver et la matrice chemin. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Renvoie</dt><dd>Retourne 1 si le mot est présent sinon retourne 0. </dd></dl>
-
-<p>Définition à la ligne <a class="el" href="traitement_8c_source.html#l00125">125</a> du fichier <a class="el" href="traitement_8c_source.html">traitement.c</a>.</p>
-
-</div>
-</div>
 <a class="anchor" id="ab160ae699802dc5e10cda59e2d335e73"></a>
 <div class="memitem">
 <div class="memproto">
@@ -196,7 +152,8 @@ Fonctions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Fonction qui récupère tous les mots et leurs points correspondant pour les trier. </p>
-<p>void <a class="el" href="traitement_8c.html#ab160ae699802dc5e10cda59e2d335e73" title="Fonction qui récupère tous les mots et leurs points correspondant pour les trier. ...">tri(t_score T[1000], int * tailleListe)</a> </p><dl class="params"><dt>Paramètres</dt><dd>
+<p>void <a class="el" href="traitement_8h.html#ab160ae699802dc5e10cda59e2d335e73" title="Fonction qui récupère tous les mots et leurs points correspondant pour les trier.">tri(t_score T[1000], int * tailleListe)</a> </p>
+<dl class="params"><dt>Paramètres</dt><dd>
   <table class="params">
     <tr><td class="paramname">Prend</td><td>en paramètre le tableau qui stocke les mots et leurs points associés ainsi que un pointeur sur le nombre de mot. </td></tr>
   </table>
@@ -204,62 +161,7 @@ Fonctions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Renvoie</dt><dd>Ne retourne rien. </dd></dl>
 
-<p>Définition à la ligne <a class="el" href="traitement_8c_source.html#l00175">175</a> du fichier <a class="el" href="traitement_8c_source.html">traitement.c</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="ae3067c7cd3382c115c5a497ad3f8bd57"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int trouverchemin </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="structt__case.html">t_case</a>&#160;</td>
-          <td class="paramname"><em>grille</em>[N][N], </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">char&#160;</td>
-          <td class="paramname"><em>motdico</em>[40], </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>i</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>j</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">char&#160;</td>
-          <td class="paramname"><em>chemin</em>[N][N]&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Fonction qui permet de parcourir tous les chemins de la matrice à partir d'une case et qui calcul le chemin associé si le mot est présent. </p>
-<dl class="params"><dt>Paramètres</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">Prend</td><td>en paramètre la grille, le mot à trouver, les coordonnées i,j à partir desquels il faut trouver un chemin et la matrice chemin. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Renvoie</dt><dd>Retourne 1 si le mot est présent sinon retourne 0. </dd></dl>
-
-<p>Définition à la ligne <a class="el" href="traitement_8c_source.html#l00023">23</a> du fichier <a class="el" href="traitement_8c_source.html">traitement.c</a>.</p>
+<p>Définition à la ligne <a class="el" href="traitement_8c_source.html#l00193">193</a> du fichier <a class="el" href="traitement_8c_source.html">traitement.c</a>.</p>
 
 </div>
 </div>
@@ -286,7 +188,7 @@ Fonctions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Renvoie</dt><dd>Ne retourne rien. </dd></dl>
 
-<p>Définition à la ligne <a class="el" href="traitement_8c_source.html#l00146">146</a> du fichier <a class="el" href="traitement_8c_source.html">traitement.c</a>.</p>
+<p>Définition à la ligne <a class="el" href="traitement_8c_source.html#l00163">163</a> du fichier <a class="el" href="traitement_8c_source.html">traitement.c</a>.</p>
 
 </div>
 </div>
@@ -295,7 +197,7 @@ Fonctions</h2></td></tr>
 <hr class="footer"/><address class="footer"><small>
 Généré par &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
-</a> 1.8.10
+</a> 1.8.3.1
 </small></address>
 </body>
 </html>

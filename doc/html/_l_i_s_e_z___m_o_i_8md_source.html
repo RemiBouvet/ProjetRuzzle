@@ -3,16 +3,15 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<meta name="generator" content="Doxygen 1.8.10"/>
+<meta name="generator" content="Doxygen 1.8.3.1"/>
 <title>Ruzzle Solver:  Fichier source de LISEZ_MOI.md</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
 <script type="text/javascript">
-  $(document).ready(function() { init_search(); });
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
 </script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
@@ -22,7 +21,7 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
-  <td id="projectalign" style="padding-left: 0.5em;">
+  <td style="padding-left: 0.5em;">
    <div id="projectname">Ruzzle Solver
    </div>
    <div id="projectbrief">Créationd&#39;unsolverdeRuzzle</div>
@@ -32,7 +31,7 @@
 </table>
 </div>
 <!-- end header part -->
-<!-- Généré par Doxygen 1.8.10 -->
+<!-- Généré par Doxygen 1.8.3.1 -->
 <script type="text/javascript">
 var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
 </script>
@@ -72,7 +71,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-</div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Fichiers</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Fonctions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Énumérations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -86,16 +85,16 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
 <div class="title">LISEZ_MOI.md</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;# Ruzzle</div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;</div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;Il faut former le plus de mots possibles avec les seize lettres disponibles dans une grille de quatre par quatre. Les mots doivent être au moins de deux lettres, et trouvés en utilisant des lettres adjacentes les unes aux autres sans réutiliser deux fois la même case de la grille. Les formes conjuguées des verbes sont acceptées.</div>
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor"># Ruzzle</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;Il faut former le plus de mots possibles avec les seize lettres disponibles dans une grille de quatre par quatre. Les mots doivent être au moins de deux lettres, et trouvés en utilisant des lettres adjacentes les unes aux autres sans réutiliser deux fois la même <span class="keywordflow">case</span> de la grille. Les formes conjuguées des verbes sont acceptées.</div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;</div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;Comme au Scrabble chaque lettre a une valeur en fonction de sa difficulté à être placée dans un mot et certaines cases sont spéciales :</div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;</div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;+ Lettre compte double : la lettre dans cette case compte deux fois plus de points</div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;+ Lettre compte triple : la lettre dans cette case compte trois fois plus de points</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;+ Mot compte double : les mots contenant cette case comptent deux fois plus de points</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;+ Mot compte triple : les mots contenant cette case comptent trois fois plus de points</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;+ Lettre compte <span class="keywordtype">double</span> : la lettre dans cette <span class="keywordflow">case</span> compte deux fois plus de points</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;+ Lettre compte triple : la lettre dans cette <span class="keywordflow">case</span> compte trois fois plus de points</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;+ Mot compte <span class="keywordtype">double</span> : les mots contenant cette <span class="keywordflow">case</span> comptent deux fois plus de points</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;+ Mot compte triple : les mots contenant cette <span class="keywordflow">case</span> comptent trois fois plus de points</div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;</div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;Il existe également un bonus en fonction de la longueur du mot créé :</div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;</div>
@@ -106,11 +105,11 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;+ 9 lettres ou plus : 25 points supplémentaires</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;</div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;## Compilation</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">## Compilation</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor"></span></div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;&gt;   make</div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;Permet de compiler l&#39;ensemble des sources, l&#39;exécutable généré peut être retrouvé dans ./bin .</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;Permet de compiler l<span class="stringliteral">&#39;ensemble des sources, l&#39;</span>exécutable généré peut être retrouvé dans ./bin .</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;&gt;   make clean</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;</div>
@@ -120,13 +119,13 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;</div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;&gt;   ./bin/ruzzlesolver</div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;Permet d&#39;exécuter le programme ruzzlesolver.</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;Permet d<span class="stringliteral">&#39;exécuter le programme ruzzlesolver.</span></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Généré par &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
-</a> 1.8.10
+</a> 1.8.3.1
 </small></address>
 </body>
 </html>

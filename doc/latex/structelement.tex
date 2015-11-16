@@ -1,8 +1,9 @@
-\hypertarget{structelement}{}\section{Référence de la structure element}
+\hypertarget{structelement}{\section{Référence de la structure element}
 \label{structelement}\index{element@{element}}
+}
 
 
-Definition de la structure de la pile qui contient des coordonnées x,y, la matrice chemin et le pointeur sur l\textquotesingle{}élement suivant.  
+Definition de la structure de la pile qui contient des coordonnées x,y, la matrice chemin qui indique le chemin par lequel on est déjà passé, la matrice chemin\-Mot qui contient les lettres du mot dans une matrice vide et le pointeur sur l'élement suivant.  
 
 
 
@@ -12,27 +13,30 @@ Definition de la structure de la pile qui contient des coordonnées x,y, la matr
 \subsection*{Attributs publics}
 \begin{DoxyCompactItemize}
 \item 
-\hypertarget{structelement_a18e88a462664541872b1018c06289ead}{}int {\bfseries x}\label{structelement_a18e88a462664541872b1018c06289ead}
+\hypertarget{structelement_a18e88a462664541872b1018c06289ead}{int {\bfseries x}}\label{structelement_a18e88a462664541872b1018c06289ead}
 
 \item 
-\hypertarget{structelement_a434c348427ff30755ba723ab1180d070}{}int {\bfseries y}\label{structelement_a434c348427ff30755ba723ab1180d070}
+\hypertarget{structelement_a434c348427ff30755ba723ab1180d070}{int {\bfseries y}}\label{structelement_a434c348427ff30755ba723ab1180d070}
 
 \item 
-\hypertarget{structelement_a6c5d7a8071a7e6410f9a08b72836023a}{}char {\bfseries chemin} \mbox{[}N\mbox{]}\mbox{[}N\mbox{]}\label{structelement_a6c5d7a8071a7e6410f9a08b72836023a}
+\hypertarget{structelement_a28553e86dd9c0b009a5abf35a0aabc0c}{int {\bfseries chemin} \mbox{[}N\mbox{]}\mbox{[}N\mbox{]}}\label{structelement_a28553e86dd9c0b009a5abf35a0aabc0c}
 
 \item 
-\hypertarget{structelement_a4f1534ded1f9373e0843568bf94ea754}{}struct \hyperlink{structelement}{element} $\ast$ {\bfseries suivant}\label{structelement_a4f1534ded1f9373e0843568bf94ea754}
+\hypertarget{structelement_a354f5cb4a63d5fac439df62ce3c9772a}{char {\bfseries chemin\-Mot} \mbox{[}N\mbox{]}\mbox{[}N\mbox{]}}\label{structelement_a354f5cb4a63d5fac439df62ce3c9772a}
+
+\item 
+\hypertarget{structelement_a4f1534ded1f9373e0843568bf94ea754}{struct \hyperlink{structelement}{element} $\ast$ {\bfseries suivant}}\label{structelement_a4f1534ded1f9373e0843568bf94ea754}
 
 \end{DoxyCompactItemize}
 
 
 \subsection{Description détaillée}
-Definition de la structure de la pile qui contient des coordonnées x,y, la matrice chemin et le pointeur sur l\textquotesingle{}élement suivant. 
+Definition de la structure de la pile qui contient des coordonnées x,y, la matrice chemin qui indique le chemin par lequel on est déjà passé, la matrice chemin\-Mot qui contient les lettres du mot dans une matrice vide et le pointeur sur l'élement suivant. 
 
-Définition à la ligne 36 du fichier structure.\+h.
+Définition à la ligne 36 du fichier structure.\-h.
 
 
 
-La documentation de cette structure a été générée à partir du fichier suivant \+:\begin{DoxyCompactItemize}
+La documentation de cette structure a été générée à partir du fichier suivant \-:\begin{DoxyCompactItemize}
 \item 
-include/\hyperlink{structure_8h}{structure.\+h}\end{DoxyCompactItemize}
+include/\hyperlink{structure_8h}{structure.\-h}\end{DoxyCompactItemize}

@@ -3,16 +3,15 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<meta name="generator" content="Doxygen 1.8.10"/>
+<meta name="generator" content="Doxygen 1.8.3.1"/>
 <title>Ruzzle Solver:  Fichier source de src/traitement.c</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
 <script type="text/javascript">
-  $(document).ready(function() { init_search(); });
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
 </script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
@@ -22,7 +21,7 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
-  <td id="projectalign" style="padding-left: 0.5em;">
+  <td style="padding-left: 0.5em;">
    <div id="projectname">Ruzzle Solver
    </div>
    <div id="projectbrief">Créationd&#39;unsolverdeRuzzle</div>
@@ -32,7 +31,7 @@
 </table>
 </div>
 <!-- end header part -->
-<!-- Généré par Doxygen 1.8.10 -->
+<!-- Généré par Doxygen 1.8.3.1 -->
 <script type="text/javascript">
 var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
 </script>
@@ -71,7 +70,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-</div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Fichiers</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Fonctions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Énumérations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -98,183 +97,187 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &quot;../include/points.h&quot;</span></div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;</div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#define N 4</span></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;</div>
-<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="traitement_8h.html#ae3067c7cd3382c115c5a497ad3f8bd57">   23</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="traitement_8c.html#ae3067c7cd3382c115c5a497ad3f8bd57">trouverchemin</a>(<a class="code" href="structt__case.html">t_case</a> grille[N][N],<span class="keywordtype">char</span> motdico[40],<span class="keywordtype">int</span> i,<span class="keywordtype">int</span> j, <span class="keywordtype">char</span> chemin[N][N]){</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="keywordtype">int</span> trouverchemin(<a class="code" href="structt__case.html" title="Definition d&#39;une case qui est une lettre avec son bonus qui lui est associé.">t_case</a> grille[N][N],<span class="keywordtype">char</span> motdico[40],<span class="keywordtype">int</span> i,<span class="keywordtype">int</span> j, <span class="keywordtype">int</span> chemin[N][N], <span class="keywordtype">char</span> cheminMot[N][N]){</div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="keywordtype">char</span> chaine[40];</div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="keywordtype">int</span> k, l;</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="keywordtype">int</span> n = 1;</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="keywordtype">int</span> x, y;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="keywordtype">int</span> x, y, xPrec, yPrec;</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="keywordflow">for</span>(k=0; k&lt;N; k++){</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;            <span class="keywordflow">for</span>(l=0; l&lt;N; l++){</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;                chemin[k][l] = <span class="charliteral">&#39;0&#39;</span>;</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;            }</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        }</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        <a class="code" href="pile__ptr_8c.html#ac4e8451a9141ddd60fd45e98cf741aad">initpile</a>();</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        x = i;</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        y = j;</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        chemin[x][y] = grille[x][y].lettre;</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        <a class="code" href="pile__ptr_8c.html#afd2bb36dec2c145c8f3a581ba51819ed">empiler</a>(i, j, chemin);</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        <span class="keywordflow">while</span>(n &gt; 0){</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;            <span class="keywordflow">if</span>((y + 1) &lt;= 3 &amp;&amp; (chemin[x][y + 1] == <span class="charliteral">&#39;0&#39;</span>)&amp;&amp; motdico[n] == grille[x][y + 1].lettre){</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;                y = y + 1;</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;                chemin[x][y] = grille[x][y].lettre;</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;                <a class="code" href="pile__ptr_8c.html#afd2bb36dec2c145c8f3a581ba51819ed">empiler</a>(x, y, chemin);</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;                strcpy(chaine,motdico);</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;                n++;</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;                chaine[n] = <span class="charliteral">&#39;\0&#39;</span>;</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;            }</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;            <span class="keywordflow">else</span> <span class="keywordflow">if</span>((x + 1) &lt;= 3 &amp;&amp; (y + 1) &lt;= 3 &amp;&amp; (chemin[x + 1][y + 1] == <span class="charliteral">&#39;0&#39;</span>) &amp;&amp; motdico[n] == grille[x + 1][y + 1].lettre){</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;                x = x + 1;</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;                y = y + 1;</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;                chemin[x][y] = grille[x][y].lettre;</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;                <a class="code" href="pile__ptr_8c.html#afd2bb36dec2c145c8f3a581ba51819ed">empiler</a>(x, y, chemin);</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;                strcpy(chaine,motdico);</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;                n++;</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;                chaine[n] = <span class="charliteral">&#39;\0&#39;</span>;</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;            }</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;            <span class="keywordflow">else</span> <span class="keywordflow">if</span>((x + 1) &lt;= 3 &amp;&amp; (chemin[x + 1][y] == <span class="charliteral">&#39;0&#39;</span>) &amp;&amp; motdico[n] == grille[x + 1][y].lettre){</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                x = x + 1;</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;                chemin[x][y] = grille[x][y].lettre;</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;                <a class="code" href="pile__ptr_8c.html#afd2bb36dec2c145c8f3a581ba51819ed">empiler</a>(x, y, chemin);</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;                strcpy(chaine,motdico);</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;                n++;</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;                chaine[n] = <span class="charliteral">&#39;\0&#39;</span>;</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;            }</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;            <span class="keywordflow">else</span> <span class="keywordflow">if</span>((x + 1) &lt;= 3 &amp;&amp; (y - 1) &gt;= 0 &amp;&amp; (chemin[x + 1][y - 1] == <span class="charliteral">&#39;0&#39;</span>) &amp;&amp; motdico[n] == grille[x + 1][y - 1].lettre){</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;                x = x + 1;</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;                y = y - 1;</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                chemin[x][y] = grille[x][y].lettre;</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;                <a class="code" href="pile__ptr_8c.html#afd2bb36dec2c145c8f3a581ba51819ed">empiler</a>(x, y, chemin);</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;                strcpy(chaine,motdico);</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;                n++;</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;                chaine[n] = <span class="charliteral">&#39;\0&#39;</span>;</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;            }</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;            <span class="keywordflow">else</span> <span class="keywordflow">if</span>((y - 1) &gt;= 0 &amp;&amp; (chemin[x][y - 1] == <span class="charliteral">&#39;0&#39;</span>)&amp;&amp; motdico[n] == grille[x][y - 1].lettre){</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;                y = y - 1;</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;                chemin[x][y] = grille[x][y].lettre;</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;                <a class="code" href="pile__ptr_8c.html#afd2bb36dec2c145c8f3a581ba51819ed">empiler</a>(x, y, chemin);</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;                strcpy(chaine,motdico);</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;                n++;</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;                chaine[n] = <span class="charliteral">&#39;\0&#39;</span>;</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;            }</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;            <span class="keywordflow">else</span> <span class="keywordflow">if</span>((x - 1) &gt;= 0 &amp;&amp; (y - 1) &gt;= 0 &amp;&amp; (chemin[x - 1][y - 1] == <span class="charliteral">&#39;0&#39;</span>) &amp;&amp; motdico[n] == grille[x - 1][y - 1].lettre){</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;                x = x - 1;</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;                y = y - 1;</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;                chemin[x][y] = grille[x][y].lettre;</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;                <a class="code" href="pile__ptr_8c.html#afd2bb36dec2c145c8f3a581ba51819ed">empiler</a>(x, y, chemin);</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;                strcpy(chaine,motdico);</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;                n++;</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;                chaine[n] = <span class="charliteral">&#39;\0&#39;</span>;</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;            }</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;            <span class="keywordflow">else</span> <span class="keywordflow">if</span>((x - 1) &gt;= 0 &amp;&amp; (chemin[x - 1][y] == <span class="charliteral">&#39;0&#39;</span>) &amp;&amp; motdico[n] == grille[x - 1][y].lettre){</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;                x = x - 1;</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;                chemin[x][y] = grille[x][y].lettre;</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;                <a class="code" href="pile__ptr_8c.html#afd2bb36dec2c145c8f3a581ba51819ed">empiler</a>(x, y, chemin);</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;                strcpy(chaine,motdico);</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;                n++;</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;                chaine[n] = <span class="charliteral">&#39;\0&#39;</span>;</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;            }</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;            <span class="keywordflow">else</span> <span class="keywordflow">if</span>((x - 1) &gt;= 0 &amp;&amp; (y + 1) &lt;= 3 &amp;&amp; (chemin[x - 1][y + 1] == <span class="charliteral">&#39;0&#39;</span>) &amp;&amp; motdico[n] == grille[x - 1][y + 1].lettre){</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;                x = x - 1;</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;                y = y + 1;</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;                chemin[x][y] = grille[x][y].lettre;</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;                <a class="code" href="pile__ptr_8c.html#afd2bb36dec2c145c8f3a581ba51819ed">empiler</a>(x, y, chemin);</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;                strcpy(chaine,motdico);</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;                n++;</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;                chaine[n] = <span class="charliteral">&#39;\0&#39;</span>;</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;            }</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;            <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;                <a class="code" href="pile__ptr_8c.html#a2e632b78b736358faa9b599fd08e54e5">depiler</a>(&amp;x, &amp;y, chemin);</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;                n--;</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;            }</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;            <span class="keywordflow">if</span>(strcmp(motdico,chaine) == 0 &amp;&amp; strlen(motdico) &gt; 2){</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;                <span class="keywordflow">return</span> 1;</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;            }</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;        }</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    <span class="keywordflow">return</span> 0;</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;}</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;</div>
-<div class="line"><a name="l00125"></a><span class="lineno"><a class="line" href="traitement_8h.html#a8df66ad8e9a6e13c18b7001561db4194">  125</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="traitement_8c.html#a8df66ad8e9a6e13c18b7001561db4194">motpresent</a>(<a class="code" href="structt__case.html">t_case</a> grille[N][N], <span class="keywordtype">char</span> motdico[40], <span class="keywordtype">char</span> chemin[N][N]){</div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;    <span class="keywordtype">int</span> i, j;</div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;    <span class="keywordflow">for</span>(i=0; i&lt;N; i++){</div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;        <span class="keywordflow">for</span>(j=0; j&lt;N; j++){</div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;            <span class="keywordflow">if</span>(motdico[0] == grille[i][j].lettre){</div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;                <span class="keywordflow">if</span>(<a class="code" href="traitement_8c.html#ae3067c7cd3382c115c5a497ad3f8bd57">trouverchemin</a>(grille, motdico, i, j, chemin)){</div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;                    <span class="keywordflow">return</span> 1;</div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;                }</div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;            }</div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;        }</div>
-<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;    }</div>
-<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;    <span class="keywordflow">return</span> 0;</div>
-<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;}</div>
-<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;</div>
-<div class="line"><a name="l00146"></a><span class="lineno"><a class="line" href="traitement_8h.html#af38304f3718d12ae5f3424a12a841103">  146</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="traitement_8c.html#af38304f3718d12ae5f3424a12a841103">trouverListe</a>(<a class="code" href="structt__case.html">t_case</a> grille[N][N]){</div>
-<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;    <span class="keywordtype">char</span> motdico[40];</div>
-<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;    <span class="keywordtype">char</span> chemin[N][N];</div>
-<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;    <span class="keywordtype">int</span> nbPoints;</div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;    FILE * dico = NULL;</div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;    dico = fopen(<span class="stringliteral">&quot;dico.txt&quot;</span>,<span class="stringliteral">&quot;r&quot;</span>);</div>
-<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;    FILE * liste = NULL;</div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;    liste = fopen(<span class="stringliteral">&quot;liste.txt&quot;</span>,<span class="stringliteral">&quot;w&quot;</span>);</div>
-<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;    <span class="keywordflow">if</span>(dico == NULL){</div>
-<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;        dico = fopen(<span class="stringliteral">&quot;bin/dico.txt&quot;</span>,<span class="stringliteral">&quot;r&quot;</span>);</div>
-<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;    }</div>
-<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;    <span class="keywordflow">while</span>(!feof(dico)){</div>
-<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;        fscanf(dico,<span class="stringliteral">&quot;%s&quot;</span>, motdico);</div>
-<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="traitement_8c.html#a8df66ad8e9a6e13c18b7001561db4194">motpresent</a>(grille, motdico, chemin)){</div>
-<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;            nbPoints = <a class="code" href="points_8c.html#a2eb22ab537e59f75c27ce523ae3a52e0">calculPoint</a>(grille, motdico, chemin);</div>
-<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;            fprintf(liste, <span class="stringliteral">&quot;%s %i\n&quot;</span>, motdico, nbPoints);</div>
-<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;        }</div>
-<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;    }</div>
-<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;    fclose(dico);</div>
-<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;    fclose(liste);</div>
-<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;}</div>
-<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;</div>
-<div class="line"><a name="l00175"></a><span class="lineno"><a class="line" href="traitement_8h.html#ab160ae699802dc5e10cda59e2d335e73">  175</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="traitement_8c.html#ab160ae699802dc5e10cda59e2d335e73">tri</a>(<a class="code" href="structt__score.html">t_score</a> T[1000], <span class="keywordtype">int</span> * tailleListe){</div>
-<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;    <span class="keywordtype">char</span> mot[20];</div>
-<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;    <span class="keywordtype">int</span> nbPoints, compteur = 0;</div>
-<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;    FILE * liste;</div>
-<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;    liste = fopen(<span class="stringliteral">&quot;liste.txt&quot;</span>,<span class="stringliteral">&quot;r&quot;</span>);</div>
-<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;    <span class="keywordflow">while</span>(!feof(liste)){</div>
-<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;        fscanf(liste,<span class="stringliteral">&quot;%s %i&quot;</span>, mot, &amp;nbPoints);</div>
-<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;        strcpy(T[compteur].mot, mot);</div>
-<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;        T[compteur].points = nbPoints;</div>
-<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;        compteur++;</div>
-<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;    }</div>
-<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;    <span class="keywordtype">int</span> i, j;</div>
-<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;    <span class="keywordflow">for</span>(i=0; i &lt; compteur ; i++){</div>
-<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;        <span class="keywordflow">for</span>(j = compteur-1; j &gt; i ; j--){</div>
-<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;            <span class="keywordflow">if</span> (T[j-1].points &gt; T[j].points){</div>
-<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;                nbPoints = T[j].points;</div>
-<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;                strcpy(mot, T[j].mot);</div>
-<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;                T[j].points = T[j - 1].points;</div>
-<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;                strcpy(T[j].mot, T[j - 1].mot);</div>
-<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;                T[j - 1].points = nbPoints;</div>
-<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;                strcpy(T[j - 1].mot, mot);</div>
-<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;            }</div>
-<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;        }</div>
-<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;    }</div>
-<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;    *tailleListe = compteur;</div>
-<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;    fclose(liste);</div>
-<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;    <span class="keyword">remove</span>(<span class="stringliteral">&quot;liste.txt&quot;</span>);</div>
-<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;}</div>
-<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;</div>
-<div class="ttc" id="pile__ptr_8c_html_ac4e8451a9141ddd60fd45e98cf741aad"><div class="ttname"><a href="pile__ptr_8c.html#ac4e8451a9141ddd60fd45e98cf741aad">initpile</a></div><div class="ttdeci">void initpile(void)</div><div class="ttdoc">Fonction qui initialise la pile. </div><div class="ttdef"><b>Definition:</b> <a href="pile__ptr_8c_source.html#l00026">pile_ptr.c:26</a></div></div>
-<div class="ttc" id="traitement_8c_html_a8df66ad8e9a6e13c18b7001561db4194"><div class="ttname"><a href="traitement_8c.html#a8df66ad8e9a6e13c18b7001561db4194">motpresent</a></div><div class="ttdeci">int motpresent(t_case grille[N][N], char motdico[40], char chemin[N][N])</div><div class="ttdoc">Fonction qui permet de determiner si un mot est présent dans la matrice et de calculer son chemin...</div><div class="ttdef"><b>Definition:</b> <a href="traitement_8c_source.html#l00125">traitement.c:125</a></div></div>
-<div class="ttc" id="structt__case_html"><div class="ttname"><a href="structt__case.html">t_case</a></div><div class="ttdoc">Definition d&#39;une case qui est une lettre avec son bonus qui lui est associé. </div><div class="ttdef"><b>Definition:</b> <a href="structure_8h_source.html#l00024">structure.h:24</a></div></div>
-<div class="ttc" id="traitement_8c_html_ab160ae699802dc5e10cda59e2d335e73"><div class="ttname"><a href="traitement_8c.html#ab160ae699802dc5e10cda59e2d335e73">tri</a></div><div class="ttdeci">void tri(t_score T[1000], int *tailleListe)</div><div class="ttdoc">Fonction qui récupère tous les mots et leurs points correspondant pour les trier. ...</div><div class="ttdef"><b>Definition:</b> <a href="traitement_8c_source.html#l00175">traitement.c:175</a></div></div>
-<div class="ttc" id="pile__ptr_8c_html_a2e632b78b736358faa9b599fd08e54e5"><div class="ttname"><a href="pile__ptr_8c.html#a2e632b78b736358faa9b599fd08e54e5">depiler</a></div><div class="ttdeci">void depiler(int *x2, int *y2, char chemin2[N][N])</div><div class="ttdoc">Fonction qui permet de retirer un élément de la pile et d&#39;attribuer sa valeur aux élément placés en p...</div><div class="ttdef"><b>Definition:</b> <a href="pile__ptr_8c_source.html#l00072">pile_ptr.c:72</a></div></div>
-<div class="ttc" id="traitement_8c_html_ae3067c7cd3382c115c5a497ad3f8bd57"><div class="ttname"><a href="traitement_8c.html#ae3067c7cd3382c115c5a497ad3f8bd57">trouverchemin</a></div><div class="ttdeci">int trouverchemin(t_case grille[N][N], char motdico[40], int i, int j, char chemin[N][N])</div><div class="ttdoc">Fonction qui permet de parcourir tous les chemins de la matrice à partir d&#39;une case et qui calcul le ...</div><div class="ttdef"><b>Definition:</b> <a href="traitement_8c_source.html#l00023">traitement.c:23</a></div></div>
-<div class="ttc" id="traitement_8c_html_af38304f3718d12ae5f3424a12a841103"><div class="ttname"><a href="traitement_8c.html#af38304f3718d12ae5f3424a12a841103">trouverListe</a></div><div class="ttdeci">void trouverListe(t_case grille[N][N])</div><div class="ttdoc">Fonction qui enregistre dans un fichier temporaire tous les mots présents dans la matrice ainsi que l...</div><div class="ttdef"><b>Definition:</b> <a href="traitement_8c_source.html#l00146">traitement.c:146</a></div></div>
-<div class="ttc" id="points_8c_html_a2eb22ab537e59f75c27ce523ae3a52e0"><div class="ttname"><a href="points_8c.html#a2eb22ab537e59f75c27ce523ae3a52e0">calculPoint</a></div><div class="ttdeci">int calculPoint(t_case grille[N][N], char mot[40], char chemin[N][N])</div><div class="ttdoc">Fonction qui permet de calculer le nombre total de point d&#39;un mot en prenant en compte sa longueur et...</div><div class="ttdef"><b>Definition:</b> <a href="points_8c_source.html#l00133">points.c:133</a></div></div>
-<div class="ttc" id="pile__ptr_8c_html_afd2bb36dec2c145c8f3a581ba51819ed"><div class="ttname"><a href="pile__ptr_8c.html#afd2bb36dec2c145c8f3a581ba51819ed">empiler</a></div><div class="ttdeci">void empiler(int x2, int y2, char chemin2[N][N])</div><div class="ttdoc">Fonction qui ajoute un élément à notre pile. </div><div class="ttdef"><b>Definition:</b> <a href="pile__ptr_8c_source.html#l00054">pile_ptr.c:54</a></div></div>
-<div class="ttc" id="structt__score_html"><div class="ttname"><a href="structt__score.html">t_score</a></div><div class="ttdoc">Definition d&#39;une structure qui permet de rassembler le mot et son nombre de point. </div><div class="ttdef"><b>Definition:</b> <a href="structure_8h_source.html#l00030">structure.h:30</a></div></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;                chemin[k][l] = 0;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;                cheminMot[k][l] = <span class="charliteral">&#39;0&#39;</span>;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;            }</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        }</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        <a class="code" href="pile__ptr_8c.html#ac4e8451a9141ddd60fd45e98cf741aad" title="Fonction qui initialise la pile.">initpile</a>();</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        x = i;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        y = j;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        xPrec = x;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        yPrec = y;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        chemin[x][y] = 1;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        <a class="code" href="pile__ptr_8c.html#adb04b55431aad69713d72ef9c5a0f950" title="Fonction qui ajoute un élément à notre pile.">empiler</a>(i, j, chemin, cheminMot);</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        <span class="keywordflow">while</span>(n &gt; 0){</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;            <span class="keywordflow">if</span>((y + 1) &lt;= 3 &amp;&amp; (chemin[x][y + 1] == 0)&amp;&amp; motdico[n] == grille[x][y + 1].lettre){</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;                y = y + 1;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;                chemin[x][y] = 1;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;                cheminMot[xPrec][yPrec] = grille[x][y].lettre;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;                <a class="code" href="pile__ptr_8c.html#adb04b55431aad69713d72ef9c5a0f950" title="Fonction qui ajoute un élément à notre pile.">empiler</a>(i, j, chemin, cheminMot);</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;                strcpy(chaine,motdico);</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;                n++;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;                chaine[n] = <span class="charliteral">&#39;\0&#39;</span>;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;            }</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;            <span class="keywordflow">else</span> <span class="keywordflow">if</span>((x + 1) &lt;= 3 &amp;&amp; (y + 1) &lt;= 3 &amp;&amp; (chemin[x + 1][y + 1] == 0) &amp;&amp; motdico[n] == grille[x + 1][y + 1].lettre){</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;                x = x + 1;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;                y = y + 1;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;                chemin[x][y] = 1;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;                cheminMot[xPrec][yPrec] = grille[x][y].lettre;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;                <a class="code" href="pile__ptr_8c.html#adb04b55431aad69713d72ef9c5a0f950" title="Fonction qui ajoute un élément à notre pile.">empiler</a>(i, j, chemin, cheminMot);</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                strcpy(chaine,motdico);</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;                n++;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;                chaine[n] = <span class="charliteral">&#39;\0&#39;</span>;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;            }</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;            <span class="keywordflow">else</span> <span class="keywordflow">if</span>((x + 1) &lt;= 3 &amp;&amp; (chemin[x + 1][y] == 0) &amp;&amp; motdico[n] == grille[x + 1][y].lettre){</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;                x = x + 1;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;                chemin[x][y] = 1;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;                cheminMot[xPrec][yPrec] = grille[x][y].lettre;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;                <a class="code" href="pile__ptr_8c.html#adb04b55431aad69713d72ef9c5a0f950" title="Fonction qui ajoute un élément à notre pile.">empiler</a>(i, j, chemin, cheminMot);</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;                strcpy(chaine,motdico);</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                n++;</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;                chaine[n] = <span class="charliteral">&#39;\0&#39;</span>;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;            }</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;            <span class="keywordflow">else</span> <span class="keywordflow">if</span>((x + 1) &lt;= 3 &amp;&amp; (y - 1) &gt;= 0 &amp;&amp; (chemin[x + 1][y - 1] == 0) &amp;&amp; motdico[n] == grille[x + 1][y - 1].lettre){</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;                x = x + 1;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;                y = y - 1;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;                chemin[x][y] = 1;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;                cheminMot[xPrec][yPrec] = grille[x][y].lettre;</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;                <a class="code" href="pile__ptr_8c.html#adb04b55431aad69713d72ef9c5a0f950" title="Fonction qui ajoute un élément à notre pile.">empiler</a>(i, j, chemin, cheminMot);</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;                strcpy(chaine,motdico);</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;                n++;</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;                chaine[n] = <span class="charliteral">&#39;\0&#39;</span>;</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;            }</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;            <span class="keywordflow">else</span> <span class="keywordflow">if</span>((y - 1) &gt;= 0 &amp;&amp; (chemin[x][y - 1] == 0)&amp;&amp; motdico[n] == grille[x][y - 1].lettre){</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;                y = y - 1;</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;                chemin[x][y] = 1;</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;                cheminMot[xPrec][yPrec] = grille[x][y].lettre;</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;                <a class="code" href="pile__ptr_8c.html#adb04b55431aad69713d72ef9c5a0f950" title="Fonction qui ajoute un élément à notre pile.">empiler</a>(i, j, chemin, cheminMot);</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;                strcpy(chaine,motdico);</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;                n++;</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;                chaine[n] = <span class="charliteral">&#39;\0&#39;</span>;</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;            }</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;            <span class="keywordflow">else</span> <span class="keywordflow">if</span>((x - 1) &gt;= 0 &amp;&amp; (y - 1) &gt;= 0 &amp;&amp; (chemin[x - 1][y - 1] == 0) &amp;&amp; motdico[n] == grille[x - 1][y - 1].lettre){</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;                x = x - 1;</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;                y = y - 1;</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;                chemin[x][y] = 1;</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;                cheminMot[xPrec][yPrec] = grille[x][y].lettre;</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;                <a class="code" href="pile__ptr_8c.html#adb04b55431aad69713d72ef9c5a0f950" title="Fonction qui ajoute un élément à notre pile.">empiler</a>(i, j, chemin, cheminMot);</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;                strcpy(chaine,motdico);</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;                n++;</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;                chaine[n] = <span class="charliteral">&#39;\0&#39;</span>;</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;            }</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;            <span class="keywordflow">else</span> <span class="keywordflow">if</span>((x - 1) &gt;= 0 &amp;&amp; (chemin[x - 1][y] == 0) &amp;&amp; motdico[n] == grille[x - 1][y].lettre){</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;                x = x - 1;</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;                chemin[x][y] = 1;</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;                cheminMot[xPrec][yPrec] = grille[x][y].lettre;</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;                <a class="code" href="pile__ptr_8c.html#adb04b55431aad69713d72ef9c5a0f950" title="Fonction qui ajoute un élément à notre pile.">empiler</a>(i, j, chemin, cheminMot);</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;                strcpy(chaine,motdico);</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;                n++;</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;                chaine[n] = <span class="charliteral">&#39;\0&#39;</span>;</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;            }</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;            <span class="keywordflow">else</span> <span class="keywordflow">if</span>((x - 1) &gt;= 0 &amp;&amp; (y + 1) &lt;= 3 &amp;&amp; (chemin[x - 1][y + 1] == 0) &amp;&amp; motdico[n] == grille[x - 1][y + 1].lettre){</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;                x = x - 1;</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;                y = y + 1;</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;                chemin[x][y] = 1;</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;                cheminMot[xPrec][yPrec] = grille[x][y].lettre;</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;                <a class="code" href="pile__ptr_8c.html#adb04b55431aad69713d72ef9c5a0f950" title="Fonction qui ajoute un élément à notre pile.">empiler</a>(i, j, chemin, cheminMot);</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;                strcpy(chaine,motdico);</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;                n++;</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;                chaine[n] = <span class="charliteral">&#39;\0&#39;</span>;</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;            }</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;            <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;                <a class="code" href="pile__ptr_8c.html#a67a024f12ec91981008eb78665a41eab" title="Fonction qui permet de retirer un élément de la pile et d&#39;attribuer sa valeur aux élément placés en p...">depiler</a>(&amp;x, &amp;y, chemin, cheminMot);</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;                n--;</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;            }</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;            <span class="keywordflow">if</span>(strcmp(motdico,chaine) == 0 &amp;&amp; strlen(motdico) &gt; 2){</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;                cheminMot[x][y] = grille[x][y].lettre;</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;                <span class="keywordflow">return</span> 1;</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;            }</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;        xPrec = x;</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;        yPrec = y;</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;        }</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;    <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;}</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;<span class="keywordtype">int</span> motpresent(<a class="code" href="structt__case.html" title="Definition d&#39;une case qui est une lettre avec son bonus qui lui est associé.">t_case</a> grille[N][N], <span class="keywordtype">char</span> motdico[40], <span class="keywordtype">int</span> chemin[N][N], <span class="keywordtype">char</span> cheminMot[N][N]){</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;    <span class="keywordtype">int</span> i, j;</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;    <span class="keywordflow">for</span>(i=0; i&lt;N; i++){</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;        <span class="keywordflow">for</span>(j=0; j&lt;N; j++){</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;            <span class="keywordflow">if</span>(motdico[0] == grille[i][j].lettre){</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;                <span class="keywordflow">if</span>(trouverchemin(grille, motdico, i, j, chemin, cheminMot)){</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;                    <span class="keywordflow">return</span> 1;</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;                }</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;            }</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;        }</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;    }</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;    <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;}</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;</div>
+<div class="line"><a name="l00163"></a><span class="lineno"><a class="code" href="traitement_8h.html#af38304f3718d12ae5f3424a12a841103">  163</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="traitement_8c.html#af38304f3718d12ae5f3424a12a841103" title="Fonction qui enregistre dans un fichier temporaire tous les mots présents dans la matrice ainsi que l...">trouverListe</a>(<a class="code" href="structt__case.html" title="Definition d&#39;une case qui est une lettre avec son bonus qui lui est associé.">t_case</a> grille[N][N]){</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;    <span class="keywordtype">char</span> motdico[40];</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;    <span class="keywordtype">int</span> chemin[N][N];</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;    <span class="keywordtype">char</span> cheminMot[N][N];</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;    <span class="keywordtype">int</span> nbPoints;</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;    FILE * dico = NULL;</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;    dico = fopen(<span class="stringliteral">&quot;dico.txt&quot;</span>,<span class="stringliteral">&quot;r&quot;</span>);</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;    FILE * liste = NULL;</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;    liste = fopen(<span class="stringliteral">&quot;liste.txt&quot;</span>,<span class="stringliteral">&quot;w&quot;</span>);</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;    <span class="keywordflow">if</span>(dico == NULL){   <span class="comment">//Permet d&#39;executer notre programme depuis le répertoire précédent sinon le dictionnaire n&#39;est pas trouvé à l&#39;execution.</span></div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;        dico = fopen(<span class="stringliteral">&quot;bin/dico.txt&quot;</span>,<span class="stringliteral">&quot;r&quot;</span>);</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;    }</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;    <span class="keywordflow">while</span>(!feof(dico)){     <span class="comment">//Pour chaque mot du dictionnaire nous regardons si il se trouve dans la grille dans le cas où il est présent nous récupérons sa matrice chemin qui contient uniquement les lettres du mot dans la matrice.</span></div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;        fscanf(dico,<span class="stringliteral">&quot;%s&quot;</span>, motdico);</div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;        <span class="keywordflow">if</span> (motpresent(grille, motdico, chemin, cheminMot)){</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;            nbPoints = <a class="code" href="points_8c.html#a2e7221175dcfe9c615b61ee712f681af" title="Fonction qui permet de calculer le nombre total de point d&#39;un mot en prenant en compte sa longueur et...">calculPoint</a>(grille, motdico, cheminMot);    <span class="comment">//Calcul du nombre de point associé au mot.</span></div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;            fprintf(liste, <span class="stringliteral">&quot;%s %i\n&quot;</span>, motdico, nbPoints);   <span class="comment">//Nous sauvegardons tous les mots et leur points correspondant dans un fichier qui n&#39;est pas encore trié.</span></div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;        }</div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;    }</div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;    fclose(dico);</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;    fclose(liste);</div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;}</div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;</div>
+<div class="line"><a name="l00193"></a><span class="lineno"><a class="code" href="traitement_8h.html#ab160ae699802dc5e10cda59e2d335e73">  193</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="traitement_8c.html#ab160ae699802dc5e10cda59e2d335e73" title="Fonction qui récupère tous les mots et leurs points correspondant pour les trier.">tri</a>(<a class="code" href="structt__score.html" title="Definition d&#39;une structure qui permet de rassembler le mot et son nombre de point.">t_score</a> T[1000], <span class="keywordtype">int</span> * tailleListe){</div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;    <span class="keywordtype">char</span> mot[20];</div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;    <span class="keywordtype">int</span> nbPoints, compteur = 0;</div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;    FILE * liste;</div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;    liste = fopen(<span class="stringliteral">&quot;liste.txt&quot;</span>,<span class="stringliteral">&quot;r&quot;</span>);</div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;    <span class="keywordflow">while</span>(!feof(liste)){    <span class="comment">//Nous récupèrons les mots et nombre de points non trié dans le fichier pour le stocker dans un tableau que l&#39;on pourra lui, trier.</span></div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;        fscanf(liste,<span class="stringliteral">&quot;%s %i&quot;</span>, mot, &amp;nbPoints);</div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;        strcpy(T[compteur].mot, mot);</div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;        T[compteur].points = nbPoints;</div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;        compteur++;</div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;    }</div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;    <span class="keywordtype">int</span> i, j;</div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;    <span class="keywordflow">for</span>(i=0; i &lt; compteur ; i++){  <span class="comment">//Nous utilisons un tri bulle pour trier nos données.</span></div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;        <span class="keywordflow">for</span>(j = compteur-1; j &gt; i ; j--){</div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;            <span class="keywordflow">if</span> (T[j-1].points &gt; T[j].points){</div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;                nbPoints = T[j].points;</div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;                strcpy(mot, T[j].mot);</div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;                T[j].points = T[j - 1].points;</div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;                strcpy(T[j].mot, T[j - 1].mot);</div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;                T[j - 1].points = nbPoints;</div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;                strcpy(T[j - 1].mot, mot);</div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;            }</div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;        }</div>
+<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;    }</div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;    *tailleListe = compteur;</div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;    fclose(liste);</div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;    <span class="keyword">remove</span>(<span class="stringliteral">&quot;liste.txt&quot;</span>);   <span class="comment">//Nous avons fait le choix de supprimer le fichier à la fin du tri.</span></div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Généré par &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
-</a> 1.8.10
+</a> 1.8.3.1
 </small></address>
 </body>
 </html>

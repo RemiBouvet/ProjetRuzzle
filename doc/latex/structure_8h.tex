@@ -1,5 +1,6 @@
-\hypertarget{structure_8h}{}\section{Référence du fichier include/structure.h}
-\label{structure_8h}\index{include/structure.\+h@{include/structure.\+h}}
+\hypertarget{structure_8h}{\section{Référence du fichier include/structure.h}
+\label{structure_8h}\index{include/structure.\-h@{include/structure.\-h}}
+}
 
 
 Fichier qui contient toutes les structures et énumération.  
@@ -8,48 +9,49 @@ Fichier qui contient toutes les structures et énumération.
 \subsection*{Classes}
 \begin{DoxyCompactItemize}
 \item 
-struct \hyperlink{structt__case}{t\+\_\+case}
-\begin{DoxyCompactList}\small\item\em Definition d\textquotesingle{}une case qui est une lettre avec son bonus qui lui est associé. \end{DoxyCompactList}\item 
-struct \hyperlink{structt__score}{t\+\_\+score}
-\begin{DoxyCompactList}\small\item\em Definition d\textquotesingle{}une structure qui permet de rassembler le mot et son nombre de point. \end{DoxyCompactList}\item 
+struct \hyperlink{structt__case}{t\-\_\-case}
+\begin{DoxyCompactList}\small\item\em Definition d'une case qui est une lettre avec son bonus qui lui est associé. \end{DoxyCompactList}\item 
+struct \hyperlink{structt__score}{t\-\_\-score}
+\begin{DoxyCompactList}\small\item\em Definition d'une structure qui permet de rassembler le mot et son nombre de point. \end{DoxyCompactList}\item 
 struct \hyperlink{structelement}{element}
-\begin{DoxyCompactList}\small\item\em Definition de la structure de la pile qui contient des coordonnées x,y, la matrice chemin et le pointeur sur l\textquotesingle{}élement suivant. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Definition de la structure de la pile qui contient des coordonnées x,y, la matrice chemin qui indique le chemin par lequel on est déjà passé, la matrice chemin\-Mot qui contient les lettres du mot dans une matrice vide et le pointeur sur l'élement suivant. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Macros}
 \begin{DoxyCompactItemize}
 \item 
-\hypertarget{structure_8h_a0240ac851181b84ac374872dc5434ee4}{}\#define {\bfseries N}~4\label{structure_8h_a0240ac851181b84ac374872dc5434ee4}
+\hypertarget{structure_8h_a0240ac851181b84ac374872dc5434ee4}{\#define {\bfseries N}~4}\label{structure_8h_a0240ac851181b84ac374872dc5434ee4}
 
 \end{DoxyCompactItemize}
 \subsection*{Définitions de type}
 \begin{DoxyCompactItemize}
 \item 
-\hypertarget{structure_8h_a8968705d25c62eaf27310fae6cc2603f}{}typedef struct \hyperlink{structelement}{element} {\bfseries t\+\_\+element}\label{structure_8h_a8968705d25c62eaf27310fae6cc2603f}
+\hypertarget{structure_8h_a8968705d25c62eaf27310fae6cc2603f}{typedef struct \hyperlink{structelement}{element} {\bfseries t\-\_\-element}}\label{structure_8h_a8968705d25c62eaf27310fae6cc2603f}
 
 \end{DoxyCompactItemize}
 \subsection*{Énumérations}
 \begin{DoxyCompactItemize}
 \item 
-\hypertarget{structure_8h_a4dfb649c60c07e69175f04af6e69d33e}{}enum \hyperlink{structure_8h_a4dfb649c60c07e69175f04af6e69d33e}{t\+\_\+bonus} \{ \\*
+enum \hyperlink{structure_8h_a4dfb649c60c07e69175f04af6e69d33e}{t\-\_\-bonus} \{ \\*
 {\bfseries aucun}, 
-{\bfseries Lettre\+Double}, 
-{\bfseries Lettre\+Triple}, 
-{\bfseries Mot\+Double}, 
+{\bfseries Lettre\-Double}, 
+{\bfseries Lettre\-Triple}, 
+{\bfseries Mot\-Double}, 
 \\*
-{\bfseries Mot\+Triple}
- \}\label{structure_8h_a4dfb649c60c07e69175f04af6e69d33e}
-\begin{DoxyCompactList}\small\item\em Cette enumération permet de définir plus facilement les bonus. \end{DoxyCompactList}
-\end{DoxyCompactItemize}
+{\bfseries Mot\-Triple}
+ \}
+\begin{DoxyCompactList}\small\item\em Cette enumération permet de définir plus facilement les bonus. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Description détaillée}
-Fichier qui contient toutes les structures et énumération. 
-
-\begin{DoxyAuthor}{Auteur}
-B\+O\+U\+V\+E\+T Rémi \& P\+R\+A\+D\+E\+R\+E-\/\+N\+I\+Q\+U\+E\+T Alexandre 
+Fichier qui contient toutes les structures et énumération. \begin{DoxyAuthor}{Auteur}
+B\-O\-U\-V\-E\-T Rémi \& P\-R\-A\-D\-E\-R\-E-\/\-N\-I\-Q\-U\-E\-T Alexandre 
 \end{DoxyAuthor}
 \begin{DoxyVersion}{Version}
-1.\+0 
+1.\-0 
 \end{DoxyVersion}
 \begin{DoxyDate}{Date}
 15 novembre 2015 
 \end{DoxyDate}
+
+
+Définition dans le fichier \hyperlink{structure_8h_source}{structure.\-h}.
+

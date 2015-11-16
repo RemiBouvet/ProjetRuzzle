@@ -1,50 +1,53 @@
-\hypertarget{generer_8c}{}\section{Référence du fichier src/generer.c}
-\label{generer_8c}\index{src/generer.\+c@{src/generer.\+c}}
+\hypertarget{generer_8c}{\section{Référence du fichier src/generer.c}
+\label{generer_8c}\index{src/generer.\-c@{src/generer.\-c}}
+}
 
 
 Fichier qui contient les fonctions qui permettent generer la grille.  
 
 
-{\ttfamily \#include $<$stdlib.\+h$>$}\\*
-{\ttfamily \#include $<$time.\+h$>$}\\*
-{\ttfamily \#include \char`\"{}../include/structure.\+h\char`\"{}}\\*
+{\ttfamily \#include $<$stdlib.\-h$>$}\\*
+{\ttfamily \#include $<$time.\-h$>$}\\*
+{\ttfamily \#include \char`\"{}../include/structure.\-h\char`\"{}}\\*
 \subsection*{Macros}
 \begin{DoxyCompactItemize}
 \item 
-\hypertarget{generer_8c_a0240ac851181b84ac374872dc5434ee4}{}\#define {\bfseries N}~4\label{generer_8c_a0240ac851181b84ac374872dc5434ee4}
+\hypertarget{generer_8c_a0240ac851181b84ac374872dc5434ee4}{\#define {\bfseries N}~4}\label{generer_8c_a0240ac851181b84ac374872dc5434ee4}
 
 \end{DoxyCompactItemize}
 \subsection*{Fonctions}
 \begin{DoxyCompactItemize}
 \item 
-int \hyperlink{generer_8c_a31044302280c0ec9eca89286f81127af}{rand\+\_\+a\+\_\+b} (int a, int b)
+int \hyperlink{generer_8c_a31044302280c0ec9eca89286f81127af}{rand\-\_\-a\-\_\-b} (int a, int b)
 \begin{DoxyCompactList}\small\item\em Fonction qui permet de générer un nombre aléatoire. \end{DoxyCompactList}\item 
-void \hyperlink{generer_8c_a7ce74e6424ae2e628d8fea22f43beeb2}{generation} (\hyperlink{structt__case}{t\+\_\+case} grille\mbox{[}N\mbox{]}\mbox{[}N\mbox{]})
+void \hyperlink{generer_8c_a7ce74e6424ae2e628d8fea22f43beeb2}{generation} (\hyperlink{structt__case}{t\-\_\-case} grille\mbox{[}N\mbox{]}\mbox{[}N\mbox{]})
 \begin{DoxyCompactList}\small\item\em Fonction qui permet de générer la grille de caractère ainsi que les bonus qui lui son associé. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Description détaillée}
-Fichier qui contient les fonctions qui permettent generer la grille. 
-
-\begin{DoxyAuthor}{Auteur}
-B\+O\+U\+V\+E\+T Rémi \& P\+R\+A\+D\+E\+R\+E-\/\+N\+I\+Q\+U\+E\+T Alexandre 
+Fichier qui contient les fonctions qui permettent generer la grille. \begin{DoxyAuthor}{Auteur}
+B\-O\-U\-V\-E\-T Rémi \& P\-R\-A\-D\-E\-R\-E-\/\-N\-I\-Q\-U\-E\-T Alexandre 
 \end{DoxyAuthor}
 \begin{DoxyVersion}{Version}
-1.\+0 
+1.\-0 
 \end{DoxyVersion}
 \begin{DoxyDate}{Date}
 15 novembre 2015 
 \end{DoxyDate}
 
 
+Définition dans le fichier \hyperlink{generer_8c_source}{generer.\-c}.
+
+
+
 \subsection{Documentation des fonctions}
-\hypertarget{generer_8c_a7ce74e6424ae2e628d8fea22f43beeb2}{}\index{generer.\+c@{generer.\+c}!generation@{generation}}
-\index{generation@{generation}!generer.\+c@{generer.\+c}}
-\subsubsection[{generation(t\+\_\+case grille[N][N])}]{\setlength{\rightskip}{0pt plus 5cm}void generation (
+\hypertarget{generer_8c_a7ce74e6424ae2e628d8fea22f43beeb2}{\index{generer.\-c@{generer.\-c}!generation@{generation}}
+\index{generation@{generation}!generer.c@{generer.\-c}}
+\subsubsection[{generation}]{\setlength{\rightskip}{0pt plus 5cm}void generation (
 \begin{DoxyParamCaption}
-\item[{{\bf t\+\_\+case}}]{grille\mbox{[}\+N\mbox{]}\mbox{[}\+N\mbox{]}}
+\item[{{\bf t\-\_\-case}}]{grille\mbox{[}\-N\mbox{]}\mbox{[}\-N\mbox{]}}
 \end{DoxyParamCaption}
-)}\label{generer_8c_a7ce74e6424ae2e628d8fea22f43beeb2}
+)}}\label{generer_8c_a7ce74e6424ae2e628d8fea22f43beeb2}
 
 
 Fonction qui permet de générer la grille de caractère ainsi que les bonus qui lui son associé. 
@@ -59,16 +62,16 @@ Ne retourne rien.
 \end{DoxyReturn}
 
 
-Définition à la ligne 33 du fichier generer.\+c.
+Définition à la ligne 33 du fichier generer.\-c.
 
-\hypertarget{generer_8c_a31044302280c0ec9eca89286f81127af}{}\index{generer.\+c@{generer.\+c}!rand\+\_\+a\+\_\+b@{rand\+\_\+a\+\_\+b}}
-\index{rand\+\_\+a\+\_\+b@{rand\+\_\+a\+\_\+b}!generer.\+c@{generer.\+c}}
-\subsubsection[{rand\+\_\+a\+\_\+b(int a, int b)}]{\setlength{\rightskip}{0pt plus 5cm}int rand\+\_\+a\+\_\+b (
+\hypertarget{generer_8c_a31044302280c0ec9eca89286f81127af}{\index{generer.\-c@{generer.\-c}!rand\-\_\-a\-\_\-b@{rand\-\_\-a\-\_\-b}}
+\index{rand\-\_\-a\-\_\-b@{rand\-\_\-a\-\_\-b}!generer.c@{generer.\-c}}
+\subsubsection[{rand\-\_\-a\-\_\-b}]{\setlength{\rightskip}{0pt plus 5cm}int rand\-\_\-a\-\_\-b (
 \begin{DoxyParamCaption}
 \item[{int}]{a, }
 \item[{int}]{b}
 \end{DoxyParamCaption}
-)}\label{generer_8c_a31044302280c0ec9eca89286f81127af}
+)}}\label{generer_8c_a31044302280c0ec9eca89286f81127af}
 
 
 Fonction qui permet de générer un nombre aléatoire. 
@@ -83,5 +86,5 @@ Retourne le nombre aléatoire.
 \end{DoxyReturn}
 
 
-Définition à la ligne 22 du fichier generer.\+c.
+Définition à la ligne 22 du fichier generer.\-c.
 

@@ -3,16 +3,15 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<meta name="generator" content="Doxygen 1.8.10"/>
+<meta name="generator" content="Doxygen 1.8.3.1"/>
 <title>Ruzzle Solver: Référence du fichier src/pile_ptr.c</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
 <script type="text/javascript">
-  $(document).ready(function() { init_search(); });
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
 </script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
@@ -22,7 +21,7 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
-  <td id="projectalign" style="padding-left: 0.5em;">
+  <td style="padding-left: 0.5em;">
    <div id="projectname">Ruzzle Solver
    </div>
    <div id="projectbrief">Créationd&#39;unsolverdeRuzzle</div>
@@ -32,7 +31,7 @@
 </table>
 </div>
 <!-- end header part -->
-<!-- Généré par Doxygen 1.8.10 -->
+<!-- Généré par Doxygen 1.8.3.1 -->
 <script type="text/javascript">
 var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
 </script>
@@ -71,7 +70,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-</div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Fichiers</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Fonctions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Énumérations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -97,9 +96,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
 
 <p>Fichier qui contient les primitives d'accès à la pile.  
 <a href="#details">Plus de détails...</a></p>
-<div class="textblock"><code>#include &lt;stdlib.h&gt;</code><br />
-<code>#include &lt;string.h&gt;</code><br />
-<code>#include &quot;<a class="el" href="structure_8h_source.html">../include/structure.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &lt;stdlib.h&gt;</code><br/>
+<code>#include &lt;string.h&gt;</code><br/>
+<code>#include &quot;<a class="el" href="structure_8h_source.html">../include/structure.h</a>&quot;</code><br/>
 </div>
 <p><a href="pile__ptr_8c_source.html">Aller au code source de ce fichier.</a></p>
 <table class="memberdecls">
@@ -112,17 +111,20 @@ Macros</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Fonctions</h2></td></tr>
 <tr class="memitem:ac4e8451a9141ddd60fd45e98cf741aad"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pile__ptr_8c.html#ac4e8451a9141ddd60fd45e98cf741aad">initpile</a> (void)</td></tr>
-<tr class="memdesc:ac4e8451a9141ddd60fd45e98cf741aad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction qui initialise la pile.  <a href="#ac4e8451a9141ddd60fd45e98cf741aad">Plus de détails...</a><br /></td></tr>
+<tr class="memdesc:ac4e8451a9141ddd60fd45e98cf741aad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction qui initialise la pile.  <a href="#ac4e8451a9141ddd60fd45e98cf741aad">Plus de détails...</a><br/></td></tr>
 <tr class="separator:ac4e8451a9141ddd60fd45e98cf741aad"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7024e12f28fa12e7835b8940054ed4fa"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pile__ptr_8c.html#a7024e12f28fa12e7835b8940054ed4fa">CopierMatrice</a> (char T1[N][N], char T2[N][N])</td></tr>
-<tr class="memdesc:a7024e12f28fa12e7835b8940054ed4fa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction qui copie une matrice de caractère dans une autre.  <a href="#a7024e12f28fa12e7835b8940054ed4fa">Plus de détails...</a><br /></td></tr>
-<tr class="separator:a7024e12f28fa12e7835b8940054ed4fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afd2bb36dec2c145c8f3a581ba51819ed"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pile__ptr_8c.html#afd2bb36dec2c145c8f3a581ba51819ed">empiler</a> (int x2, int y2, char chemin2[N][N])</td></tr>
-<tr class="memdesc:afd2bb36dec2c145c8f3a581ba51819ed"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction qui ajoute un élément à notre pile.  <a href="#afd2bb36dec2c145c8f3a581ba51819ed">Plus de détails...</a><br /></td></tr>
-<tr class="separator:afd2bb36dec2c145c8f3a581ba51819ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2e632b78b736358faa9b599fd08e54e5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pile__ptr_8c.html#a2e632b78b736358faa9b599fd08e54e5">depiler</a> (int *x2, int *y2, char chemin2[N][N])</td></tr>
-<tr class="memdesc:a2e632b78b736358faa9b599fd08e54e5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction qui permet de retirer un élément de la pile et d'attribuer sa valeur aux élément placés en paramètre.  <a href="#a2e632b78b736358faa9b599fd08e54e5">Plus de détails...</a><br /></td></tr>
-<tr class="separator:a2e632b78b736358faa9b599fd08e54e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a32763e6c32a4c1eaeaf6ef2506c75bd8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pile__ptr_8c.html#a32763e6c32a4c1eaeaf6ef2506c75bd8">CopierMatrice</a> (int t1[N][N], int t2[N][N])</td></tr>
+<tr class="memdesc:a32763e6c32a4c1eaeaf6ef2506c75bd8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction qui copie une matrice d'entier dans une autre.  <a href="#a32763e6c32a4c1eaeaf6ef2506c75bd8">Plus de détails...</a><br/></td></tr>
+<tr class="separator:a32763e6c32a4c1eaeaf6ef2506c75bd8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afd6125d9b014d9064d6b0a2765721367"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="afd6125d9b014d9064d6b0a2765721367"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>CopierMatriceChar</b> (char T1[N][N], char T2[N][N])</td></tr>
+<tr class="separator:afd6125d9b014d9064d6b0a2765721367"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adb04b55431aad69713d72ef9c5a0f950"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pile__ptr_8c.html#adb04b55431aad69713d72ef9c5a0f950">empiler</a> (int x2, int y2, int chemin2[N][N], char cheminMot2[N][N])</td></tr>
+<tr class="memdesc:adb04b55431aad69713d72ef9c5a0f950"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction qui ajoute un élément à notre pile.  <a href="#adb04b55431aad69713d72ef9c5a0f950">Plus de détails...</a><br/></td></tr>
+<tr class="separator:adb04b55431aad69713d72ef9c5a0f950"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a67a024f12ec91981008eb78665a41eab"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pile__ptr_8c.html#a67a024f12ec91981008eb78665a41eab">depiler</a> (int *x2, int *y2, int chemin2[N][N], char cheminMot2[N][N])</td></tr>
+<tr class="memdesc:a67a024f12ec91981008eb78665a41eab"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction qui permet de retirer un élément de la pile et d'attribuer sa valeur aux élément placés en paramètre.  <a href="#a67a024f12ec91981008eb78665a41eab">Plus de détails...</a><br/></td></tr>
+<tr class="separator:a67a024f12ec91981008eb78665a41eab"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
@@ -138,21 +140,21 @@ Variables</h2></td></tr>
 
 <p>Définition dans le fichier <a class="el" href="pile__ptr_8c_source.html">pile_ptr.c</a>.</p>
 </div><h2 class="groupheader">Documentation des fonctions</h2>
-<a class="anchor" id="a7024e12f28fa12e7835b8940054ed4fa"></a>
+<a class="anchor" id="a32763e6c32a4c1eaeaf6ef2506c75bd8"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
           <td class="memname">void CopierMatrice </td>
           <td>(</td>
-          <td class="paramtype">char&#160;</td>
-          <td class="paramname"><em>T1</em>[N][N], </td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>t1</em>[N][N], </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">char&#160;</td>
-          <td class="paramname"><em>T2</em>[N][N]&#160;</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>t2</em>[N][N]&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -162,7 +164,15 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Fonction qui copie une matrice de caractère dans une autre. </p>
+<p>Fonction qui copie une matrice d'entier dans une autre. </p>
+<p>Fonction qui copie une matrice de caractère dans une autre.</p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">Il</td><td>y a deux mattrice de caractère en paramètre : t2 qui se copie dans t1. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>Ne retourne rien.</dd></dl>
 <dl class="params"><dt>Paramètres</dt><dd>
   <table class="params">
     <tr><td class="paramname">Il</td><td>y a deux mattrice de caractère en paramètre : T2 qui se copie dans T1. </td></tr>
@@ -175,7 +185,7 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a2e632b78b736358faa9b599fd08e54e5"></a>
+<a class="anchor" id="a67a024f12ec91981008eb78665a41eab"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -194,8 +204,14 @@ Variables</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>chemin2</em>[N][N], </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
           <td class="paramtype">char&#160;</td>
-          <td class="paramname"><em>chemin2</em>[N][N]&#160;</td>
+          <td class="paramname"><em>cheminMot2</em>[N][N]&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -208,17 +224,17 @@ Variables</h2></td></tr>
 <p>Fonction qui permet de retirer un élément de la pile et d'attribuer sa valeur aux élément placés en paramètre. </p>
 <dl class="params"><dt>Paramètres</dt><dd>
   <table class="params">
-    <tr><td class="paramname">Elle</td><td>prend en paramètre les pointeurs *x2, *y2 et chemin2. </td></tr>
+    <tr><td class="paramname">Elle</td><td>prend en paramètre les pointeurs *x2, *y2, chemin2, cheminMot2. </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="section return"><dt>Renvoie</dt><dd>Ne retourne rien. </dd></dl>
 
-<p>Définition à la ligne <a class="el" href="pile__ptr_8c_source.html#l00072">72</a> du fichier <a class="el" href="pile__ptr_8c_source.html">pile_ptr.c</a>.</p>
+<p>Définition à la ligne <a class="el" href="pile__ptr_8c_source.html#l00089">89</a> du fichier <a class="el" href="pile__ptr_8c_source.html">pile_ptr.c</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="afd2bb36dec2c145c8f3a581ba51819ed"></a>
+<a class="anchor" id="adb04b55431aad69713d72ef9c5a0f950"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -237,8 +253,14 @@ Variables</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>chemin2</em>[N][N], </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
           <td class="paramtype">char&#160;</td>
-          <td class="paramname"><em>chemin2</em>[N][N]&#160;</td>
+          <td class="paramname"><em>cheminMot2</em>[N][N]&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -251,13 +273,13 @@ Variables</h2></td></tr>
 <p>Fonction qui ajoute un élément à notre pile. </p>
 <dl class="params"><dt>Paramètres</dt><dd>
   <table class="params">
-    <tr><td class="paramname">Prend</td><td>en paramètre deux coordonnées x2 et y2 et également la matrice de caractère chemin2. </td></tr>
+    <tr><td class="paramname">Prend</td><td>en paramètre deux coordonnées x2 et y2 et également la matrice du chemin emprinté chemin2 et le mot dans une matrice vide cheminMot2. </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="section return"><dt>Renvoie</dt><dd>Ne retourne rien. </dd></dl>
 
-<p>Définition à la ligne <a class="el" href="pile__ptr_8c_source.html#l00054">54</a> du fichier <a class="el" href="pile__ptr_8c_source.html">pile_ptr.c</a>.</p>
+<p>Définition à la ligne <a class="el" href="pile__ptr_8c_source.html#l00070">70</a> du fichier <a class="el" href="pile__ptr_8c_source.html">pile_ptr.c</a>.</p>
 
 </div>
 </div>
@@ -293,7 +315,7 @@ Variables</h2></td></tr>
 <hr class="footer"/><address class="footer"><small>
 Généré par &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
-</a> 1.8.10
+</a> 1.8.3.1
 </small></address>
 </body>
 </html>
