@@ -189,7 +189,7 @@ void trouverListe(t_case grille[N][N]){
     char motdico[40];
     int chemin[N][N];
     char cheminMot[N][N];
-    int nbPoints;
+    int Points;
     FILE * dico = NULL;
     dico = fopen("dico.txt","r");
     FILE * liste = NULL;
@@ -200,8 +200,8 @@ void trouverListe(t_case grille[N][N]){
     while(!feof(dico)){     //Pour chaque mot du dictionnaire nous regardons si il se trouve dans la grille dans le cas où il est présent nous récupérons sa matrice chemin qui contient uniquement les lettres du mot dans la matrice.
         fscanf(dico,"%s", motdico);
         if (motpresent(grille, motdico, chemin, cheminMot)){
-            nbPoints = calculPoint(grille, motdico, cheminMot);    //Calcul du nombre de point associé au mot.
-            fprintf(liste, "%s %i\n", motdico, nbPoints);   //Nous sauvegardons tous les mots et leur points correspondant dans un fichier qui n'est pas encore trié.
+            Points = calculPoint(grille, motdico, cheminMot);    //Calcul du nombre de point associé au mot.
+            fprintf(liste, "%s %i\n", motdico, Points);   //Nous sauvegardons tous les mots et leur points correspondant dans un fichier qui n'est pas encore trié.
         }
     }
     fclose(dico);

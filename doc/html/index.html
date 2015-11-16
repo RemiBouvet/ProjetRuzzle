@@ -38,7 +38,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li class="current"><a href="index.html"><span>Page&#160;principale</span></a></li>
-      <li><a href="pages.html"><span>Pages&#160;associées</span></a></li>
       <li><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Fichiers</span></a></li>
       <li>
@@ -65,7 +64,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Fichiers</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Fonctions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Énumérations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Fichiers</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Fonctions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Énumérations</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -79,7 +78,40 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
 <div class="title">Ruzzle Solver Documentation</div>  </div>
 </div><!--header-->
 <div class="contents">
-</div><!-- contents -->
+<div class="textblock"><p>Il faut former le plus de mots possibles avec les seize lettres disponibles dans une grille de quatre par quatre. Les mots doivent être au moins de deux lettres, et trouvés en utilisant des lettres adjacentes les unes aux autres sans réutiliser deux fois la même case de la grille. Les formes conjuguées des verbes sont acceptées.</p>
+<p>Comme au Scrabble chaque lettre a une valeur en fonction de sa difficulté à être placée dans un mot et certaines cases sont spéciales :</p>
+<ul>
+<li>Lettre compte double : la lettre dans cette case compte deux fois plus de points</li>
+<li>Lettre compte triple : la lettre dans cette case compte trois fois plus de points</li>
+<li>Mot compte double : les mots contenant cette case comptent deux fois plus de points</li>
+<li>Mot compte triple : les mots contenant cette case comptent trois fois plus de points</li>
+</ul>
+<p>Il existe également un bonus en fonction de la longueur du mot créé :</p>
+<ul>
+<li>5 lettres : 5 points supplémentaires</li>
+<li>6 lettres : 10 points supplémentaires</li>
+<li>7 lettres : 15 points supplémentaires</li>
+<li>8 lettres : 20 points supplémentaires</li>
+<li>9 lettres ou plus : 25 points supplémentaires</li>
+</ul>
+<h2>Compilation</h2>
+<blockquote class="doxtable">
+<p>make</p>
+<p></p>
+</blockquote>
+<p>Permet de compiler l'ensemble des sources, l'exécutable généré peut être retrouvé dans ./bin .</p>
+<blockquote class="doxtable">
+<p>make clean</p>
+<p></p>
+</blockquote>
+<p>Permet de supprimer tous les .o créé lors de la compilation.</p>
+<h2>Execution</h2>
+<blockquote class="doxtable">
+<p>./bin/ruzzlesolver</p>
+<p></p>
+</blockquote>
+<p>Permet d'exécuter le programme ruzzlesolver. </p>
+</div></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Généré par &#160;<a href="http://www.doxygen.org/index.html">
