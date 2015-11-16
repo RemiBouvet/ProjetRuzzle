@@ -37,6 +37,6 @@ int main(void){
     trouverListe(grille);
     tri(Liste, &tailleListe);
     printf("Voici la liste des mots trouve dans la grille et leur nombre de points :\n");
-    //afficher_liste(tailleListe, Liste);
+    afficher_liste(tailleListe, Liste);
     return 0;
 }

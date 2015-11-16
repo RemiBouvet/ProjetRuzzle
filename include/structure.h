@@ -31,7 +31,7 @@ typedef struct {char mot[20]; int points;} t_score;
 
 /**
  * \struct element structure.h Structure
- * \brief Definition de la structure de la pile qui contient des coordonnées x,y, la matrice chemin et le pointeur sur l'élement suivant.
+ * \brief Definition de la structure de la pile qui contient des coordonnées x,y, la matrice chemin qui indique le chemin par lequel on est déjà passé, la matrice cheminMot qui contient les lettres du mot dans une matrice vide et le pointeur sur l'élement suivant.
  */
 typedef struct element{int x; int y; int chemin[N][N]; char cheminMot[N][N]; struct element* suivant;} t_element;
 

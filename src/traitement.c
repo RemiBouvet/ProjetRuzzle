@@ -19,13 +19,38 @@
  *
  * \param Prend en paramètre la grille, le mot à trouver, les coordonnées i,j à partir desquels il faut trouver un chemin et la matrice chemin.
  * \return Retourne 1 si le mot est présent sinon retourne 0.
+ *
+ * La matrice chemin[N][N] représente le chemin par lequel nous sommes déjà passé en passant à 
+ * 1 la valeur dans la matrice, elle est initialisé à 0 à chaque début de chemin.
+ * 
+ * La matrice cheminMot[N][N] est une matrice de caractère qui est initialisé à '0' qui
+ * contient les lettres du chemin emprinté à la place où elles le sont dans la grille.
+ *
+ * Les variables x et y représentent les coordonnées à laquelle nous sommes dans la grille.
+ * Les vaiables xPrec et yPrec représente les coordonnées précédente.
+ * La variable n qui correspond à la longueur de notre chaine de caractère parcourue dans la grille.
+ * La variable chaine correspond à notre chaine de caractère parcourue dans la grille.
+ * 
+ * Voici les étapes de la fonction :
+ * 	-Initialisation: la matrice chemin à 0 et la matrice cheminMot à '0'
+ *		 	 La valeur n à 1
+ *			 Les coordonnées x à i et y à j ce qui correspond à l'initialisation de notre point de départ de notre chemin.
+ * 			 On empile une première fois.
+ * 
+ * 	-Traitement: Nous testons les 8 cases autour de nous :
+ *			Si la case n'est pas hors de la grille et si nous ne sommes pas déjà passé par cette case et si la lettre dans la case correspond à la prochaine lettre dans notre mot.
+ *			Alors on met à jour les coordonnées, les matrices, la chaine et la longueur de la chaine
+ * 			Sinon on dépile, c'est à dire on revient à la case précédente avec le chemin qui est désormais actualisé, c'est à dire que pour x et y de la case à partir laquelle nous avons dépilé chemin[x][y] = 1.
+ *		A chaque execution de la boucle nous testons si le mot du dictionnaire correspond exactement à celui de la chaine que nous sommes en train de regarder alors on quitte la fonction et on retourne 1.
+ *		Sinon le programme fini par retourner 0.
+ *
  */
 int trouverchemin(t_case grille[N][N],char motdico[40],int i,int j, int chemin[N][N], char cheminMot[N][N]){
-    char chaine[40];
-    int k, l;
-    int n = 1;
-    int x, y, xPrec, yPrec;
-    for(k=0; k<N; k++){
+    	char chaine[40];	//initialisation de la fonction
+    	int k, l;
+    	int n = 1;
+    	int x, y, xPrec, yPrec;
+    	for(k=0; k<N; k++){
             for(l=0; l<N; l++){
                 chemin[k][l] = 0;
                 cheminMot[k][l] = '0';
@@ -37,9 +62,9 @@ int trouverchemin(t_case grille[N][N],char motdico[40],int i,int j, int chemin[N
         xPrec = x;
         yPrec = y;
         chemin[x][y] = 1;
-        empiler(i, j, chemin, cheminMot);
-        while(n > 0){
-            if((y + 1) <= 3 && (chemin[x][y + 1] == 0)&& motdico[n] == grille[x][y + 1].lettre){
+        empiler(i, j, chemin, cheminMot);	//initialisation
+        while(n > 0){	//traitement
+            if((y + 1) <= 3 && (chemin[x][y + 1] == 0)&& motdico[n] == grille[x][y + 1].lettre){	//Test si la case n'est pas hors de la grille et si nous ne sommes pas déjà passé par cette case et si la lettre dans la case correspond à la prochaine lettre dans notre mot.
                 y = y + 1;
                 chemin[x][y] = 1;
                 cheminMot[xPrec][yPrec] = grille[x][y].lettre;
@@ -115,11 +140,11 @@ int trouverchemin(t_case grille[N][N],char motdico[40],int i,int j, int chemin[N
                 n++;
                 chaine[n] = '\0';
             }
-            else {
+            else { 	//Si nous pouvons aller dans aucune case alors on dépile
                 depiler(&x, &y, chemin, cheminMot);
-                n--;
+                n--;	//On garde toujours la valeur de la longueur de la chain à jour
             }
-            if(strcmp(motdico,chaine) == 0 && strlen(motdico) > 2){
+            if(strcmp(motdico,chaine) == 0 && strlen(motdico) > 2){	// Si nous trouvons un mot
                 cheminMot[x][y] = grille[x][y].lettre;
                 return 1;
             }
@@ -176,7 +201,6 @@ void trouverListe(t_case grille[N][N]){
         fscanf(dico,"%s", motdico);
         if (motpresent(grille, motdico, chemin, cheminMot)){
             nbPoints = calculPoint(grille, motdico, cheminMot);    //Calcul du nombre de point associé au mot.
-            printf("%s %i\n", motdico, nbPoints);
             fprintf(liste, "%s %i\n", motdico, nbPoints);   //Nous sauvegardons tous les mots et leur points correspondant dans un fichier qui n'est pas encore trié.
         }
     }
