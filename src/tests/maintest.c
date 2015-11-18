@@ -18,8 +18,8 @@
 #include "../../include/traitementtest.h"
 #include "../../include/CUnit/CUnit.h"
 #include "../../include/CUnit/Basic.h"
-//#include "CUnit/Automated.h"
-//#include "CUnit/Console.h"
+#include "../../include/CUnit/Automated.h"
+#include "../../include/CUnit/Console.h"
 
 #define N 4
 
