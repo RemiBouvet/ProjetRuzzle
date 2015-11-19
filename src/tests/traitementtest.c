@@ -187,7 +187,7 @@ int motpresent(t_case grille[N][N], char motdico[40], int chemin[N][N], char che
  * \param Prend en paramètre la grille.
  * \return Ne retourne rien.
  */
-void trouverListe(t_case grille[N][N]){
+int trouverListe(t_case grille[N][N]){
     char motdico[40];
     int chemin[N][N];
     char cheminMot[N][N];
@@ -203,13 +203,14 @@ void trouverListe(t_case grille[N][N]){
         fscanf(dico,"%s", motdico);
         if (motpresent(grille, motdico, chemin, cheminMot)){
             Points = calculPoint(grille, motdico, cheminMot);    //Calcul du nombre de point associé au mot.
-	CU_ASSERT (Points == 21);
+		
 
             fprintf(liste, "%s %i\n", motdico, Points);   //Nous sauvegardons tous les mots et leur points correspondant dans un fichier qui n'est pas encore trié.
         }
     }
     fclose(dico);
     fclose(liste);
+	return Points;
 }
 
 /**

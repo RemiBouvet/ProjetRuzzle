@@ -31,6 +31,8 @@
  * \param Ne prend pas de paramètres.
  * \return Retourne 0;
  */
+
+int points = 0;
 int main(void){
     t_case grille[N][N];
     t_score Liste[1000];
@@ -38,10 +40,13 @@ int main(void){
     generation(grille);
     printf("\n\n\t  RUZZLE SOLVER\n");
     afficher_matrice(grille);
-    trouverListe(grille);
+    points = trouverListe(grille);
     tri(Liste, &tailleListe);
     printf("Voici la liste des mots trouve dans la grille et leur nombre de points :\n");
     afficher_liste(tailleListe, Liste);
+void test(void){ 
+	CU_ASSERT_EQUAL(points, 21); 
+}
 
 
     CU_pSuite pSuite = NULL;
@@ -50,9 +55,12 @@ int main(void){
     pSuite = CU_add_suite("Suite_1", 0, 0);
     if (!pSuite) { 
 	CU_cleanup_registry();
-	return CU_get_error(); }
-
-    if (!CU_add_test(pSuite, "test of fprintf()", test_max)){
+	return CU_get_error(); 
+    }
+	
+	
+	
+    if (!CU_add_test(pSuite, "test of fprintf()", test)){
         CU_cleanup_registry();
     	return CU_get_error();
     }
