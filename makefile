@@ -9,7 +9,7 @@ SRC=/src/
 SRC_TEST=/src/tests/
 INCLUDE=/include/
 
-executer: clean maintest main
+executer: main
 
 maintest: maintest.o affichage.o generertest.o pile_ptr.o points.o traitementtest.o
 	$(CC) maintest.o affichage.o generertest.o pile_ptr.o points.o traitementtest.o -o .$(DIR_TEST)$(NOM_TEST) $(FLAG_TEST)
